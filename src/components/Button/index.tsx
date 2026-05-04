@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export const Button = ({ variant = 'royal', children, onClick }: ButtonProps) => {
   return (
-    <ButtonContainer variant={variant} onClick={onClick}>
+    <ButtonContainer $variant={variant} onClick={onClick}>
       {children}
     </ButtonContainer>
   );

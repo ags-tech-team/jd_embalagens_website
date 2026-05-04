@@ -10,7 +10,6 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
     <LayoutContainer>
       <Header />
       <MainContent>{children}</MainContent>
-      {/* Footer vai ser criado depois */}
     </LayoutContainer>
   );
 };
