@@ -1,6 +1,7 @@
-// pages/Home/index.tsx
 import { HeroCarousel } from '../../components/Home/HeroCarousel';
 import { AboutSection } from '../../components/Home/AboutSection';
+import { CtaSection } from '../../components/Home/CtaSection';
+import { CatalogSection } from '../../components/Home/CatalogSection';
 
 export const Home = () => {
   const slides = [
@@ -51,6 +52,8 @@ export const Home = () => {
         qualityTexts={qualityTexts}
         stats={stats}
       />
+      <CtaSection />
+      <CatalogSection />
     </>
   );
 };
