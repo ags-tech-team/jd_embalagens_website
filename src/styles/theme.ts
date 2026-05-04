@@ -6,5 +6,9 @@ export const theme = {
     white: '#FFFFFF',
     gray: '#F5F5F5',
     text: '#333333'
+  },
+  breakpoints: {
+    mobile: '768px',
+    tablet: '1024px'
   }
 } as const;

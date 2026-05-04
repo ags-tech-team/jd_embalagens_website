@@ -8,5 +8,5 @@ export const LayoutContainer = styled.div`
 
 export const MainContent = styled.main`
   flex: 1;
-  margin-top: 80px; /* Por causa do header fixo */
+  margin-top: 0;
 `;

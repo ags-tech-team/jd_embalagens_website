@@ -1,5 +1,4 @@
-// components/Header/index.tsx
-import { HeaderContainer, Logo, Nav, NavLink } from './styles';
+import { HeaderContainer, Logo, Nav, NavLink, ButtonWrapper } from './styles';
 import { Button } from '../Button';
 
 export const Header = () => {
@@ -14,9 +13,9 @@ export const Header = () => {
         <img 
           src="/logo_white.png" 
           alt="JD Embalagens - Color Copo" 
-          style={{ height: '100px', width: 'auto' }}
         />
       </Logo>
+      
       <Nav>
         <NavLink href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>
           Início
@@ -31,7 +30,10 @@ export const Header = () => {
           Produtos
         </NavLink>
       </Nav>
-      <Button variant="vibrant">Aqui na JD</Button>
+      
+      <ButtonWrapper>
+        <Button variant="vibrant">Aqui na JD</Button>
+      </ButtonWrapper>
     </HeaderContainer>
   );
 };
