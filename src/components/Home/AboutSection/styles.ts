@@ -106,12 +106,15 @@ export const QualitySection = styled.section<{ $isVisible: boolean }>`
 `;
 
 export const QualityContentWrapper = styled.div<{ $isVisible: boolean }>`
+  max-width: 1200px;
+  margin: 0 auto;
   opacity: ${props => props.$isVisible ? 1 : 0};
   transform: ${props => props.$isVisible ? 'translateX(0)' : 'translateX(50px)'};
   transition: all 0.8s ease-out 0.2s;
   
   ${AboutTitle} {
     color: ${props => props.theme.colors.white};
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2);
     
     &::after {
       background: ${props => props.theme.colors.white};
@@ -120,6 +123,13 @@ export const QualityContentWrapper = styled.div<{ $isVisible: boolean }>`
   
   ${AboutText} {
     color: ${props => props.theme.colors.white};
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.2);
+    
+    strong {
+      color: ${props => props.theme.colors.white};
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      font-weight: 700;
+    }
   }
 `;
 
@@ -151,6 +161,7 @@ export const StatsNumber = styled.div`
   font-weight: bold;
   color: ${props => props.theme.colors.white};
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -161,4 +172,5 @@ export const StatsLabel = styled.div`
   font-size: 0.9rem;
   color: ${props => props.theme.colors.white};
   opacity: 0.9;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 `;
