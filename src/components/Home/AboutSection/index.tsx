@@ -33,30 +33,30 @@ export const AboutSection = ({
   qualityTexts = [],
   stats = []
 }: AboutSectionProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
   const [isQualityVisible, setIsQualityVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
   const qualityRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
+      if (aboutRef.current) {
+        const rect = aboutRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const isVisibleNow = rect.top <= windowHeight * 0.7 && rect.bottom >= 0;
+        const isVisibleNow = rect.top <= windowHeight * 0.8 && rect.bottom >= 0;
         
-        if (isVisibleNow !== isVisible) {
-          setIsVisible(isVisibleNow);
+        if (isVisibleNow !== isAboutVisible) {
+          setIsAboutVisible(isVisibleNow);
         }
       }
       
       if (qualityRef.current) {
         const rect = qualityRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const isQualityVisibleNow = rect.top <= windowHeight * 0.7 && rect.bottom >= 0;
+        const isVisibleNow = rect.top <= windowHeight * 0.8 && rect.bottom >= 0;
         
-        if (isQualityVisibleNow !== isQualityVisible) {
-          setIsQualityVisible(isQualityVisibleNow);
+        if (isVisibleNow !== isQualityVisible) {
+          setIsQualityVisible(isVisibleNow);
         }
       }
     };
@@ -65,19 +65,19 @@ export const AboutSection = ({
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isVisible, isQualityVisible]);
+  }, [isAboutVisible, isQualityVisible]);
 
   return (
     <>
-      <AboutSectionContainer ref={sectionRef} $isVisible={isVisible}>
+      <AboutSectionContainer ref={aboutRef} $isVisible={isAboutVisible}>
         <AboutContainer>
-          <AboutContent $isVisible={isVisible}>
+          <AboutContent $isVisible={isAboutVisible}>
             <AboutTitle>{title}</AboutTitle>
             {texts.map((text, index) => (
               <AboutText key={index} dangerouslySetInnerHTML={{ __html: text }} />
             ))}
           </AboutContent>
-          <AboutImage $isVisible={isVisible}>
+          <AboutImage $isVisible={isAboutVisible}>
             <img src={imageSrc} alt={imageAlt} />
           </AboutImage>
         </AboutContainer>

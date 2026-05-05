@@ -2,6 +2,8 @@ import { HeroCarousel } from '../../components/Home/HeroCarousel';
 import { AboutSection } from '../../components/Home/AboutSection';
 import { CtaSection } from '../../components/Home/CtaSection';
 import { CatalogSection } from '../../components/Home/CatalogSection';
+import { WorkPreview } from '../../components/Home/WorkPreview';
+import { FaqSection } from '../../components/Home/FaqSection';
 
 export const Home = () => {
   const slides = [
@@ -52,8 +54,10 @@ export const Home = () => {
         qualityTexts={qualityTexts}
         stats={stats}
       />
+      <WorkPreview />
       <CtaSection />
       <CatalogSection />
+      <FaqSection/>
     </>
   );
 };
