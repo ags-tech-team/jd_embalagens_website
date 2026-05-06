@@ -1,4 +1,3 @@
-// styles/global.ts
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,10 +9,15 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
-    padding-top: 0;
+    padding-top: 70px; /* altura do header no mobile */
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+    @media (min-width: 992px) {
+      padding-top: 90px; /* altura do header no desktop */
+    }
   }
 
   html {
@@ -42,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   .swiper-pagination-bullet-active {
-    background: #00AEEF;
+    background: ${props => props.theme.colors.vibrant};
     opacity: 1;
     width: 20px;
     border-radius: 5px;
@@ -60,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
   
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    background: #00AEEF !important;
+    background: ${props => props.theme.colors.vibrant} !important;
     transform: scale(1.05);
   }
   

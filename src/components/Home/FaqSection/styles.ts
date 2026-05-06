@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FaqContainer = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  background: ${props => props.theme.colors.background};
   position: relative;
   overflow: hidden;
   opacity: ${props => props.$isVisible ? 1 : 0};
@@ -109,15 +109,16 @@ export const FaqGrid = styled.div`
 `;
 
 export const FaqCard = styled.div<{ $isOpen: boolean }>`
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.cardBg};
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: ${props => props.$isOpen 
-    ? '0 15px 35px rgba(0, 114, 188, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05)' 
-    : '0 5px 20px rgba(0, 0, 0, 0.05)'};
-  
+  box-shadow: 0 5px 20px rgba(0, 0, 0, ${props => props.theme.colors.dark === '#0B1F35' 
+    ? 0.05 
+    : 0.2
+  });
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 114, 188, 0.12);
@@ -128,7 +129,7 @@ export const FaqQuestion = styled.div`
   padding: 1.5rem;
   font-size: 1.1rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.text};
   display: flex;
   align-items: center;
   gap: 1rem;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CatalogContainer = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+  background: ${props => props.theme.colors.background};
   position: relative;
   overflow: hidden;
   opacity: ${props => props.$isVisible ? 1 : 0};

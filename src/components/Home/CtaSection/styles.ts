@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CtaContainer = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #0B1F35 0%, #1a3a5c 100%);
+  background: linear-gradient(135deg, ${props => props.theme.colors.footerBg} 0%, ${props => props.theme.colors.dark} 100%);
   position: relative;
   overflow: hidden;
   opacity: ${props => props.$isVisible ? 1 : 0};

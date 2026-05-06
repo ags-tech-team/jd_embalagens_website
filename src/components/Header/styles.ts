@@ -1,11 +1,10 @@
-// components/Header/styles.ts
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.headerBg};
   padding: 0 5%;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: fixed;
@@ -13,32 +12,41 @@ export const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 90px;
+  height: 70px;
+  
+  @media (min-width: 992px) {
+    height: 90px;
+  }
 `;
 
 export const Logo = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-self: start;
   
   img {
-    height: 60px;
+    height: 50px;
     width: auto;
     display: block;
+    
+    @media (min-width: 992px) {
+      height: 90px;
+    }
   }
 `;
 
 export const Nav = styled.nav`
-  display: flex;
-  gap: 2.5rem;
+  display: none;
+  gap: 2rem;
   align-items: center;
-  justify-self: center;
-  margin: 0 auto;
+  
+  @media (min-width: 992px) {
+    display: flex;
+  }
 `;
 
 export const NavLink = styled.a`
-  color: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.text};
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -46,6 +54,7 @@ export const NavLink = styled.a`
   cursor: pointer;
   padding: 8px 0;
   position: relative;
+  white-space: nowrap;
   
   &:hover {
     color: ${props => props.theme.colors.royal};
@@ -70,5 +79,73 @@ export const NavLink = styled.a`
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-self: end;
+  gap: 0.75rem;
+  
+  @media (min-width: 992px) {
+    gap: 1rem;
+  }
+  
+  button {
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    
+    @media (min-width: 992px) {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+  }
+`;
+
+export const MobileMenuButton = styled.button`
+  background: none;
+  border: none;
+  color: ${props => props.theme.colors.text};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
+
+export const MobileMenu = styled.div<{ $isOpen: boolean }>`
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: ${props => props.theme.colors.headerBg};
+  padding: ${props => props.$isOpen ? '2rem' : '0'};
+  height: ${props => props.$isOpen ? 'auto' : '0'};
+  opacity: ${props => props.$isOpen ? 1 : 0};
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: ${props => props.$isOpen ? '0 4px 10px rgba(0,0,0,0.1)' : 'none'};
+  
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
+
+export const MobileNavLink = styled.a`
+  display: block;
+  color: ${props => props.theme.colors.text};
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    color: ${props => props.theme.colors.royal};
+    background: ${props => props.theme.colors.gray};
+  }
 `;
