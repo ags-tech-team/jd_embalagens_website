@@ -18,19 +18,19 @@ export const HeroSlide = styled.div<{ $image: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
   }
 `;
 
 export const HeroContent = styled.div`
   text-align: center;
-  color: ${props => props.theme.colors.white};
+  color: #FFFFFF !important;
   max-width: 90%;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   animation: fadeInUp 1s ease-out;
   position: relative;
   z-index: 2;
@@ -39,6 +39,7 @@ export const HeroContent = styled.div`
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: bold;
+    color: #FFFFFF !important;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
     
     @media (min-width: 768px) {
@@ -52,6 +53,7 @@ export const HeroContent = styled.div`
   
   p {
     font-size: 1rem;
+    color: #FFFFFF !important;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.3);
     
     @media (min-width: 768px) {
@@ -81,7 +83,7 @@ export const FadeBottom = styled.div`
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, transparent 0%, ${props => props.theme.colors.fadeWhite} 100%);
   z-index: 10;
   pointer-events: none;
 `;

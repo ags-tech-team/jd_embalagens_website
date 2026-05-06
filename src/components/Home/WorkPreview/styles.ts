@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PreviewContainer = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  background: ${props => props.theme.colors.background};
   position: relative;
   overflow: hidden;
   opacity: ${props => props.$isVisible ? 1 : 0};
@@ -140,7 +140,7 @@ export const SectionTitle = styled.div`
 export const CategoryTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.text};
   margin-bottom: 0.5rem;
   position: relative;
   display: inline-block;
@@ -189,13 +189,14 @@ export const Card = styled.div<{ $isActive?: boolean }>`
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: ${props => props.$isActive 
-    ? '0 15px 35px rgba(0, 114, 188, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1)' 
-    : '0 5px 15px rgba(0, 0, 0, 0.08)'};
+  box-shadow: 0 10px 25px rgba(0, 0, 0, ${props => props.theme.colors.dark === '#0B1F35' 
+    ? 0.1 
+    : 0.3
+  });
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 320px;
   margin: 0 auto;
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.cardBg};
   opacity: ${props => props.$isActive ? 1 : 0.35};
   transform: ${props => props.$isActive ? 'scale(1)' : 'scale(0.85)'};
   z-index: ${props => props.$isActive ? 5 : 1};
@@ -228,8 +229,8 @@ export const CardTitle = styled.p`
   padding: 1rem;
   text-align: center;
   font-weight: 600;
-  color: ${props => props.theme.colors.dark};
-  background: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.cardBg};
   font-size: 0.95rem;
   margin: 0;
   transition: all 0.3s ease;
