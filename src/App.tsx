@@ -1,8 +1,9 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { GlobalStyle } from './styles/global';
 import { MainLayout } from './layouts/MainLayout';
 import { Home } from './pages/Home';
+import { Products } from './pages/Products';
 import { useEffect } from 'react';
 import { useTheme } from './contexts/ThemeContext';
 
@@ -27,9 +28,18 @@ function AppContent() {
   return (
     <>
       <GlobalStyle />
-      <MainLayout>
-        <Home />
-      </MainLayout>
+      <Routes>
+        <Route path="/" element={
+          <MainLayout>
+            <Home />
+          </MainLayout>
+        } />
+        <Route path="/produtos" element={
+          <MainLayout>
+            <Products />
+          </MainLayout>
+        } />
+      </Routes>
     </>
   );
 }

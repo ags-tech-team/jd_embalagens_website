@@ -19,13 +19,13 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
   
   img {
-    height: 50px;
+    height: 40px;
     width: auto;
     display: block;
     
@@ -45,7 +45,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled.div`
   color: ${props => props.theme.colors.text};
   text-decoration: none;
   font-weight: 600;
@@ -133,7 +133,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
   }
 `;
 
-export const MobileNavLink = styled.a`
+export const MobileNavLink = styled.div`
   display: block;
   color: ${props => props.theme.colors.text};
   text-decoration: none;

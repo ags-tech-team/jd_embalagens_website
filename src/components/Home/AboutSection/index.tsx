@@ -15,6 +15,7 @@ import {
 } from './styles';
 
 interface AboutSectionProps {
+  id?: string;  // ← adicione
   title: string;
   texts: string[];
   imageSrc: string;
@@ -25,6 +26,7 @@ interface AboutSectionProps {
 }
 
 export const AboutSection = ({ 
+  id,  // ← adicione
   title, 
   texts, 
   imageSrc, 
@@ -69,7 +71,7 @@ export const AboutSection = ({
 
   return (
     <>
-      <AboutSectionContainer ref={aboutRef} $isVisible={isAboutVisible}>
+      <AboutSectionContainer ref={aboutRef} $isVisible={isAboutVisible} id={id}>
         <AboutContainer>
           <AboutContent $isVisible={isAboutVisible}>
             <AboutTitle>{title}</AboutTitle>

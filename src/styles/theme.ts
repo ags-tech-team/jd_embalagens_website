@@ -11,7 +11,7 @@ export const lightTheme = {
     headerBg: '#FFFFFF',
     footerBg: '#0B1F35',
     border: '#E0E0E0',
-    fadeWhite: '#FFFFFF'
+    fadeWhite: '#FFFFFF'  
   },
   breakpoints: {
     mobile: '768px',
@@ -32,7 +32,7 @@ export const darkTheme = {
     headerBg: '#1a1a2e',
     footerBg: '#0f0f1a',
     border: '#2d2d3f',
-    fadeWhite: 'rgba(18, 18, 24, 0.95)'
+    fadeWhite: '#121212'  
   },
   breakpoints: {
     mobile: '768px',

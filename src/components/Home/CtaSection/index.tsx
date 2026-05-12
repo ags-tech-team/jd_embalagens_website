@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { CtaContainer, CtaWrapper, CtaContent, CtaImage, CtaTitle, CtaText, CtaButton } from './styles';
 
-export const CtaSection = () => {
+interface CtaSectionProps {
+  id?: string;  // ← adicione
+}
+
+export const CtaSection = ({ id }: CtaSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -25,7 +29,7 @@ export const CtaSection = () => {
   }, [isVisible]);
 
   return (
-    <CtaContainer ref={sectionRef} $isVisible={isVisible}>
+    <CtaContainer ref={sectionRef} $isVisible={isVisible} id={id}>
       <CtaWrapper>
         <CtaContent $isVisible={isVisible}>
           <CtaTitle>PERSONALIZE HOJE!</CtaTitle>
