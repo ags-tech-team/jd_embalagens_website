@@ -12,6 +12,9 @@ declare module 'styled-components' {
       background: string;
       cardBg: string;
       headerBg: string;
+      footerBg: string;
+      border: string;
+      fadeWhite: string;  
     };
     breakpoints: {
       mobile: string;

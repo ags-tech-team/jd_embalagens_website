@@ -53,9 +53,10 @@ export const Home = () => {
         qualityTitle="NOSSA QUALIDADE"
         qualityTexts={qualityTexts}
         stats={stats}
+        id="sobre"
       />
       <WorkPreview />
-      <CtaSection />
+      <CtaSection id="personalize"/>
       <CatalogSection />
       <FaqSection/>
     </>

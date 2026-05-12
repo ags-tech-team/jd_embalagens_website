@@ -1,16 +1,67 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { HeaderContainer, Logo, Nav, NavLink, ButtonWrapper, MobileMenuButton, MobileMenu, MobileNavLink } from './styles';
 import { Button } from '../Button';
 import { ThemeToggle } from '../ThemeToggle';
 import { useTheme } from '../../contexts/ThemeContext';
 
 export const Header = () => {
+  const navigate = useNavigate();
   const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 90;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 90;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const goToProducts = () => {
+    navigate('/produtos');
     setMobileMenuOpen(false);
   };
 
@@ -19,21 +70,21 @@ export const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>
+        <Logo onClick={scrollToTop}>
           <img src={logoSrc} alt="JD Embalagens - Color Copo" />
         </Logo>
         
         <Nav>
-          <NavLink href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>
+          <NavLink onClick={scrollToTop}>
             Início
           </NavLink>
-          <NavLink href="#sobre" onClick={(e) => { e.preventDefault(); scrollToSection('sobre'); }}>
+          <NavLink onClick={() => scrollToSection('sobre')}>
             Sobre
           </NavLink>
-          <NavLink href="#confeccao" onClick={(e) => { e.preventDefault(); scrollToSection('confeccao'); }}>
+          <NavLink onClick={() => scrollToSection('personalize')}>
             Confecção
           </NavLink>
-          <NavLink href="#produtos" onClick={(e) => { e.preventDefault(); scrollToSection('produtos'); }}>
+          <NavLink onClick={goToProducts}>
             Produtos
           </NavLink>
         </Nav>
@@ -48,16 +99,16 @@ export const Header = () => {
       </HeaderContainer>
 
       <MobileMenu $isOpen={mobileMenuOpen}>
-        <MobileNavLink href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>
+        <MobileNavLink onClick={scrollToTop}>
           Início
         </MobileNavLink>
-        <MobileNavLink href="#sobre" onClick={(e) => { e.preventDefault(); scrollToSection('sobre'); }}>
+        <MobileNavLink onClick={() => scrollToSection('sobre')}>
           Sobre
         </MobileNavLink>
-        <MobileNavLink href="#confeccao" onClick={(e) => { e.preventDefault(); scrollToSection('confeccao'); }}>
+        <MobileNavLink onClick={() => scrollToSection('personalize')}>
           Confecção
         </MobileNavLink>
-        <MobileNavLink href="#produtos" onClick={(e) => { e.preventDefault(); scrollToSection('produtos'); }}>
+        <MobileNavLink onClick={goToProducts}>
           Produtos
         </MobileNavLink>
       </MobileMenu>
