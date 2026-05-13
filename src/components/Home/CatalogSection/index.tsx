@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { CatalogContainer, CatalogWrapper, CatalogContent, CatalogImage, CatalogTitle, CatalogText, CatalogButton } from './styles';
 
-export const CatalogSection = () => {
+interface CatalogSectionProps {
+  onButtonClick?: () => void;
+}
+
+export const CatalogSection = ({ onButtonClick }: CatalogSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -25,11 +29,11 @@ export const CatalogSection = () => {
   }, [isVisible]);
 
   return (
-    <CatalogContainer ref={sectionRef} $isVisible={isVisible}>
+    <CatalogContainer ref={sectionRef} $isVisible={isVisible} id="catalogo">
       <CatalogWrapper>
         <CatalogImage $isVisible={isVisible}>
           <img 
-            src="https://placehold.co/600x500/00AEEF/white/png?text=Catálogo+JD" 
+            src="products/copoPP550.png" 
             alt="Catálogo de embalagens JD"
           />
         </CatalogImage>
@@ -40,7 +44,7 @@ export const CatalogSection = () => {
             <br />
             Temos opções para todos os segmentos, desde cafeterias até grandes eventos.
           </CatalogText>
-          <CatalogButton>Ver Catálogo</CatalogButton>
+          <CatalogButton onClick={onButtonClick}>Ver Catálogo</CatalogButton>
         </CatalogContent>
       </CatalogWrapper>
     </CatalogContainer>

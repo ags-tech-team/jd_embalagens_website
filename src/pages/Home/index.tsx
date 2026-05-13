@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { HeroCarousel } from '../../components/Home/HeroCarousel';
 import { AboutSection } from '../../components/Home/AboutSection';
 import { CtaSection } from '../../components/Home/CtaSection';
@@ -6,21 +7,27 @@ import { WorkPreview } from '../../components/Home/WorkPreview';
 import { FaqSection } from '../../components/Home/FaqSection';
 
 export const Home = () => {
+  const navigate = useNavigate();
+
+  const goToProducts = () => {
+    navigate('/produtos');
+  };
+
   const slides = [
     {
       title: 'Criamos sua arte...',
       subtitle: 'Design personalizado para sua marca se destacar no mercado',
-      image: '/slides/slide1.jpg'
+      image: '/slides/slide1.png'
     },
     {
       title: 'Diversas embalagens...',
       subtitle: 'Catálogo completo com mais de 500 modelos disponíveis',
-      image: '/slides/slide2.jpg'
+      image: '/slides/slide2.png'
     },
     {
       title: 'Entregamos em todo o Brasil',
       subtitle: 'Logística eficiente para atender sua empresa onde você estiver',
-      image: '/slides/slide3.jpg'
+      image: '/slides/slide3.png'
     }
   ];
 
@@ -55,9 +62,9 @@ export const Home = () => {
         stats={stats}
       />
       <WorkPreview />
-      <CtaSection />
-      <CatalogSection />
-      <FaqSection/>
+      <CtaSection onButtonClick={goToProducts} />
+      <CatalogSection onButtonClick={goToProducts} />
+      <FaqSection />
     </>
   );
 };

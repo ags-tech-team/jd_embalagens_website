@@ -1,4 +1,3 @@
-// styles/global.ts
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -8,16 +7,58 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.text};
-    padding-top: 0;
-    overflow-x: hidden;
-  }
-
   html {
     scroll-behavior: smooth;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
+    padding-top: 70px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    min-height: 100%;
+    position: relative;
+    
+    @media (min-width: 992px) {
+      padding-top: 90px;
+    }
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
+  }
+
+  /* Scrollbar customizada - só uma barra */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${props => props.theme.colors.gray};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.royal};
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.colors.vibrant};
+  }
+
+  /* Garantir que nenhum elemento crie scroll extra */
+  .swiper,
+  .swiper-wrapper,
+  .swiper-slide {
+    overflow: hidden !important;
   }
 
   .swiper {
@@ -42,7 +83,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   .swiper-pagination-bullet-active {
-    background: #00AEEF;
+    background: ${props => props.theme.colors.vibrant};
     opacity: 1;
     width: 20px;
     border-radius: 5px;
@@ -60,7 +101,7 @@ export const GlobalStyle = createGlobalStyle`
   
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    background: #00AEEF !important;
+    background: ${props => props.theme.colors.vibrant} !important;
     transform: scale(1.05);
   }
   

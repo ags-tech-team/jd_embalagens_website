@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { CtaContainer, CtaWrapper, CtaContent, CtaImage, CtaTitle, CtaText, CtaButton } from './styles';
 
-export const CtaSection = () => {
+interface CtaSectionProps {
+  onButtonClick?: () => void;
+}
+
+export const CtaSection = ({ onButtonClick }: CtaSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -25,7 +29,7 @@ export const CtaSection = () => {
   }, [isVisible]);
 
   return (
-    <CtaContainer ref={sectionRef} $isVisible={isVisible}>
+    <CtaContainer ref={sectionRef} $isVisible={isVisible} id="personalize">
       <CtaWrapper>
         <CtaContent $isVisible={isVisible}>
           <CtaTitle>PERSONALIZE HOJE!</CtaTitle>
@@ -34,11 +38,11 @@ export const CtaSection = () => {
             <br />
             Transforme suas embalagens em uma experiência única que seus clientes vão amar.
           </CtaText>
-          <CtaButton>Solicitar Orçamento</CtaButton>
+          <CtaButton onClick={onButtonClick}>Solicitar Orçamento</CtaButton>
         </CtaContent>
         <CtaImage $isVisible={isVisible}>
           <img 
-            src="https://placehold.co/600x500/0072BC/white/png?text=Embalagens+JD" 
+            src="products/potePapel.png " 
             alt="Embalagens personalizadas JD"
           />
         </CtaImage>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AboutSectionContainer = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.background};
   opacity: ${props => props.$isVisible ? 1 : 0};
   transform: ${props => props.$isVisible ? 'translateY(0)' : 'translateY(50px)'};
   transition: all 0.8s ease-out;
@@ -35,6 +35,7 @@ export const AboutContent = styled.div<{ $isVisible: boolean }>`
 
 export const AboutTitle = styled.h2`
   font-size: 2rem;
+  font-weight: 800;
   color: ${props => props.theme.colors.royal};
   margin-bottom: 1.5rem;
   position: relative;
@@ -95,7 +96,7 @@ export const AboutImage = styled.div<{ $isVisible: boolean }>`
 
 export const QualitySection = styled.section<{ $isVisible: boolean }>`
   padding: 5rem 5%;
-  background: linear-gradient(135deg, ${props => props.theme.colors.royal} 0%, ${props => props.theme.colors.vibrant} 100%);
+  background: linear-gradient(135deg, #0B1F35 0%, #1a3a5c 100%);
   opacity: ${props => props.$isVisible ? 1 : 0};
   transform: ${props => props.$isVisible ? 'translateY(0)' : 'translateY(50px)'};
   transition: all 0.8s ease-out;
@@ -113,22 +114,18 @@ export const QualityContentWrapper = styled.div<{ $isVisible: boolean }>`
   transition: all 0.8s ease-out 0.2s;
   
   ${AboutTitle} {
-    color: ${props => props.theme.colors.white};
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF !important;
     
     &::after {
-      background: ${props => props.theme.colors.white};
+      background: ${props => props.theme.colors.vibrant};
     }
   }
   
   ${AboutText} {
-    color: ${props => props.theme.colors.white};
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF !important;
     
     strong {
-      color: ${props => props.theme.colors.white};
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      font-weight: 700;
+      color: ${props => props.theme.colors.vibrant} !important;
     }
   }
 `;
@@ -159,7 +156,7 @@ export const StatsCard = styled.div`
 export const StatsNumber = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
-  color: ${props => props.theme.colors.white};
+  color: #FFFFFF !important;
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   
@@ -170,7 +167,7 @@ export const StatsNumber = styled.div`
 
 export const StatsLabel = styled.div`
   font-size: 0.9rem;
-  color: ${props => props.theme.colors.white};
+  color: #FFFFFF !important;
   opacity: 0.9;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 `;
