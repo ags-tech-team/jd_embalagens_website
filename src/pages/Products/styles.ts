@@ -153,3 +153,7 @@ export const ProductName = styled.p`
     padding: 1rem 0.5rem 0.5rem;
   }
 `;
+
+export const ProductsWrapper = styled.div`
+  background: ${props => props.theme.colors.background};
+`;

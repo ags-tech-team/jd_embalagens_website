@@ -22,8 +22,9 @@ export const ProductModal = ({ isOpen, onClose, product }: ProductModalProps) =>
   if (!isOpen || !product) return null;
 
   const handleWhatsApp = () => {
-    const message = `Olá! Gostaria de solicitar um orçamento para o produto: *${product.name}*.`;
-    const url = `https://wa.me/55${process.env.REACT_APP_WHATSAPP_NUMBER || '5511999999999'}?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Vim pelo site de vocês e gostaria de fazer um orçamento para o produto: *${product.name}*.`;
+    const phoneNumber = '554898318911';
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 

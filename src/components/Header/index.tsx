@@ -91,7 +91,7 @@ export const Header = () => {
         
         <ButtonWrapper>
           <ThemeToggle />
-          <Button variant="vibrant">Aqui na JD</Button>
+          <Button variant="vibrant" onClick={goToProducts}>Faça seu orçamento!</Button>
           <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? '✕' : '☰'}
           </MobileMenuButton>
