@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   ProductsContainer, 
   ProductsTitle, 
@@ -8,14 +8,21 @@ import {
   ProductGrid,
   ProductCard,
   ProductImage,
-  ProductName
+  ProductName,
+  ProductsWrapper
 } from './styles';
 import { productsData } from './data';
 import { ProductModal } from '../../components/Products/ProductModal';
+import { PDFButton } from '../../components/PDFButton';
 
 export const Products = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<{ name: string; image: string } | null>(null);
+  const catalogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   const handleProductClick = (product: { name: string; image: string }) => {
     setSelectedProduct(product);
@@ -36,32 +43,36 @@ export const Products = () => {
 
   return (
     <>
-      <ProductsContainer>
-        <ProductsTitle>
-          <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>
-        </ProductsTitle>
-        <ProductsSubtitle>
-          Encontre a embalagem ideal para o seu negócio
-        </ProductsSubtitle>
+      <ProductsWrapper ref={catalogRef} id="catalog-pdf">
+        <ProductsContainer>
+          <ProductsTitle>
+            <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>
+          </ProductsTitle>
+          <ProductsSubtitle>
+            Encontre a embalagem ideal para o seu negócio
+          </ProductsSubtitle>
 
-        {categories.map((category) => (
-          <CategorySection key={category.key}>
-            <CategoryTitle>
-              <span>{category.icon}</span> {category.title}
-            </CategoryTitle>
-            
-            <ProductGrid>
-              {category.items.map((product) => (
-                <ProductCard key={product.id} onClick={() => handleProductClick(product)}>
-                  <ProductImage src={product.image} alt={product.name} />
-                  <ProductName>{product.name}</ProductName>
-                </ProductCard>
-              ))}
-            </ProductGrid>
-          </CategorySection>
-        ))}
-      </ProductsContainer>
-
+          {categories.map((category) => (
+            <CategorySection key={category.key}>
+              <CategoryTitle>
+                <span>{category.icon}</span> {category.title}
+              </CategoryTitle>
+              
+              <ProductGrid>
+                {category.items.map((product) => (
+                  <ProductCard key={product.id} onClick={() => handleProductClick(product)}>
+                    <ProductImage src={product.image} alt={product.name} />
+                    <ProductName>{product.name}</ProductName>
+                  </ProductCard>
+                ))}
+              </ProductGrid>
+            </CategorySection>
+          ))}
+        </ProductsContainer>
+      </ProductsWrapper>
+      
+      <PDFButton elementId="catalog-pdf" fileName="catalogo-jd-embalagens.pdf" />
+      
       <ProductModal 
         isOpen={modalOpen}
         onClose={closeModal}
