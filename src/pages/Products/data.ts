@@ -19,8 +19,8 @@ export const productsData = {
     title: "POTES",
     icon: "🍨",
     items: [
-      { id: 11, name: "Pote PET 250ml", image: "products/potePET250.png" },
-      { id: 12, name: "Pote PET 500ml", image: "products/potePET500.png" },
+      { id: 11, name: "Pote PET 250ml", image: "products/potePet250.png" },
+      { id: 12, name: "Pote PET 500ml", image: "products/potePet500.png" },
       { id: 13, name: "Pote de Papel", image: "products/potePapel.png" },
       { id: 14, name: "Pote de Isopor", image: "products/poteIsopor.png" }
     ]
