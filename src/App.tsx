@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { CartProvider } from './contexts/CartContext';
 import { GlobalStyle } from './styles/global';
 import { MainLayout } from './layouts/MainLayout';
 import { Home } from './pages/Home';
@@ -12,7 +13,6 @@ function AppContent() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
     const handleChange = (e: MediaQueryListEvent) => {
       const savedTheme = localStorage.getItem('theme');
       if (!savedTheme) {
@@ -21,7 +21,6 @@ function AppContent() {
     };
     
     mediaQuery.addEventListener('change', handleChange);
-    
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, [setTheme]);
 
@@ -48,7 +47,9 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <AppContent />
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
       </ThemeProvider>
     </BrowserRouter>
   );

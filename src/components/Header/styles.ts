@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
   background: ${props => props.theme.colors.headerBg};
   padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: fixed;
@@ -23,6 +23,7 @@ export const Logo = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-self: start;
   
   img {
     height: 40px;
@@ -39,6 +40,7 @@ export const Nav = styled.nav`
   display: none;
   gap: 2rem;
   align-items: center;
+  justify-self: center;
   
   @media (min-width: 992px) {
     display: flex;
@@ -79,7 +81,9 @@ export const NavLink = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.75rem;
+  justify-self: end;
   
   @media (min-width: 992px) {
     gap: 1rem;
@@ -91,8 +95,8 @@ export const ButtonWrapper = styled.div`
     font-size: 0.85rem;
     
     @media (min-width: 992px) {
-      padding: 12px 24px;
-      font-size: 1rem;
+      padding: 10px 20px;
+      font-size: 0.9rem;
     }
   }
 `;
@@ -147,5 +151,24 @@ export const MobileNavLink = styled.div`
   &:hover {
     color: ${props => props.theme.colors.royal};
     background: ${props => props.theme.colors.gray};
+  }
+`;
+
+export const SocialLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.theme.colors.text};
+  transition: all 0.3s ease;
+  
+  svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover {
+    color: ${props => props.theme.colors.vibrant};
+    transform: scale(1.05);
   }
 `;

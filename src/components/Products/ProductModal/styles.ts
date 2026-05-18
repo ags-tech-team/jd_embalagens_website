@@ -98,7 +98,7 @@ export const ModalButton = styled.button`
   gap: 0.75rem;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: ${props => props.theme.colors.royal};
   border: none;
   border-radius: 50px;
   font-weight: 700;
@@ -107,14 +107,10 @@ export const ModalButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
   
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-  
   &:hover {
+    background: ${props => props.theme.colors.vibrant};
     transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 114, 188, 0.4);
   }
   
   &:active {

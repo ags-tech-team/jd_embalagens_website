@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   ProductsContainer, 
   ProductsTitle, 
@@ -17,14 +17,13 @@ import { PDFButton } from '../../components/PDFButton';
 
 export const Products = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<{ name: string; image: string } | null>(null);
-  const catalogRef = useRef<HTMLDivElement>(null);
+  const [selectedProduct, setSelectedProduct] = useState<{ id: number; name: string; image: string } | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
-  const handleProductClick = (product: { name: string; image: string }) => {
+  const handleProductClick = (product: { id: number; name: string; image: string }) => {
     setSelectedProduct(product);
     setModalOpen(true);
   };
@@ -38,12 +37,13 @@ export const Products = () => {
     { key: 'copos', title: productsData.copos.title, icon: productsData.copos.icon, items: productsData.copos.items },
     { key: 'potes', title: productsData.potes.title, icon: productsData.potes.icon, items: productsData.potes.items },
     { key: 'sacolas', title: productsData.sacolas.title, icon: productsData.sacolas.icon, items: productsData.sacolas.items },
+    { key: 'limpeza', title: productsData.limpeza.title, icon: productsData.limpeza.icon, items: productsData.limpeza.items },
     { key: 'outros', title: productsData.outros.title, icon: productsData.outros.icon, items: productsData.outros.items }
   ];
 
   return (
     <>
-      <ProductsWrapper ref={catalogRef} id="catalog-pdf">
+      <ProductsWrapper id="catalog-pdf">
         <ProductsContainer>
           <ProductsTitle>
             <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>

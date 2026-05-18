@@ -46,5 +46,15 @@ export const productsData = {
       { id: 23, name: "Canetas", image: "products/canetas.png" },
       { id: 24, name: "Marmita de Isopor", image: "products/marmitaIsopor.png" }
     ]
+  },
+   limpeza: {
+    title: "LIMPEZA e HIGIENE",
+    icon: "🧹",
+    items: [
+      { id: 25, name: "Produtos de Limpeza", image: "products/produtosLimpeza.png" },
+      { id: 26, name: "Saco de Lixo", image: "products/sacoLixo.png" },
+      { id: 27, name: "Papel Higiênico", image: "products/papelHigienico.webp" },
+      { id: 28, name: "Papel Toalha", image: "products/roloPapelToalha.webp" }
+    ]
   }
 };

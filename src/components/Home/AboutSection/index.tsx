@@ -15,7 +15,7 @@ import {
 } from './styles';
 
 interface AboutSectionProps {
-  id?: string;  // ← adicione
+  id?: string; 
   title: string;
   texts: string[];
   imageSrc: string;
@@ -26,7 +26,7 @@ interface AboutSectionProps {
 }
 
 export const AboutSection = ({ 
-  id,  // ← adicione
+  id,  
   title, 
   texts, 
   imageSrc, 
