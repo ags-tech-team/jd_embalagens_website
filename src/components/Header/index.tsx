@@ -52,7 +52,7 @@ export const Header = () => {
     setMobileMenuOpen(false);
   };
 
-  const logoSrc = theme === 'light' ? '/logo_white.png' : '/logo_dark.png';
+  const logoSrc = theme === 'light' ? '/logo_white.webp' : '/logo_dark.webp';
 
   return (
     <>

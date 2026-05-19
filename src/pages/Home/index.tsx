@@ -17,17 +17,17 @@ export const Home = () => {
     {
       title: 'Criamos sua arte...',
       subtitle: 'Design personalizado para sua marca se destacar no mercado',
-      image: '/slides/slide1.png'
+      image: '/slides/slide1.webp'
     },
     {
       title: 'Diversas embalagens...',
       subtitle: 'Catálogo completo com mais de 500 modelos disponíveis',
-      image: '/slides/slide2.png'
+      image: '/slides/slide2.webp'
     },
     {
       title: 'Entregamos em todo o Brasil',
       subtitle: 'Logística eficiente para atender sua empresa onde você estiver',
-      image: '/slides/slide3.png'
+      image: '/slides/slide3.webp'
     }
   ];
 
