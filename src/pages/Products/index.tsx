@@ -61,7 +61,12 @@ export const Products = () => {
               <ProductGrid>
                 {category.items.map((product) => (
                   <ProductCard key={product.id} onClick={() => handleProductClick(product)}>
-                    <ProductImage src={product.image} alt={product.name} />
+                    <ProductImage 
+                      src={product.image} 
+                      alt={product.name} 
+                      fetchPriority="high" 
+                      decoding="sync" 
+                    />
                     <ProductName>{product.name}</ProductName>
                   </ProductCard>
                 ))}
