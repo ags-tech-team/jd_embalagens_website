@@ -1,13 +1,11 @@
 {
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "npm run build"
+  },
   "deploy": {
     "startCommand": "npx serve -s build -l 3000",
-    "headers": {
-      "/images/optimized/*": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      },
-      "/static/*": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    }
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
   }
 }
