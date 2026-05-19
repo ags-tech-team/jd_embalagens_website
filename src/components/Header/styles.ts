@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   background: ${props => props.theme.colors.headerBg};
-  padding: 0 5%;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: fixed;
@@ -16,6 +16,7 @@ export const HeaderContainer = styled.header`
   
   @media (min-width: 992px) {
     height: 90px;
+    padding: 0 5%;
   }
 `;
 
@@ -23,7 +24,7 @@ export const Logo = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-self: start;
+  flex-shrink: 0;
   
   img {
     height: 40px;
@@ -40,7 +41,6 @@ export const Nav = styled.nav`
   display: none;
   gap: 2rem;
   align-items: center;
-  justify-self: center;
   
   @media (min-width: 992px) {
     display: flex;
@@ -78,26 +78,38 @@ export const NavLink = styled.div`
   }
 `;
 
-export const ButtonWrapper = styled.div`
+export const RightGroup = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 0.75rem;
-  justify-self: end;
+  flex-shrink: 0;
   
   @media (min-width: 992px) {
     gap: 1rem;
   }
+`;
+
+export const SocialLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.theme.colors.text};
+  transition: all 0.3s ease;
   
-  button {
-    white-space: nowrap;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
     
     @media (min-width: 992px) {
-      padding: 10px 20px;
-      font-size: 0.9rem;
+      width: 22px;
+      height: 22px;
     }
+  }
+  
+  &:hover {
+    color: ${props => props.theme.colors.vibrant};
+    transform: scale(1.05);
   }
 `;
 
@@ -110,8 +122,9 @@ export const MobileMenuButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 8px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-left: 4px;
   
   @media (min-width: 992px) {
     display: none;
@@ -151,24 +164,5 @@ export const MobileNavLink = styled.div`
   &:hover {
     color: ${props => props.theme.colors.royal};
     background: ${props => props.theme.colors.gray};
-  }
-`;
-
-export const SocialLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${props => props.theme.colors.text};
-  transition: all 0.3s ease;
-  
-  svg {
-    width: 22px;
-    height: 22px;
-    transition: all 0.3s ease;
-  }
-  
-  &:hover {
-    color: ${props => props.theme.colors.vibrant};
-    transform: scale(1.05);
   }
 `;

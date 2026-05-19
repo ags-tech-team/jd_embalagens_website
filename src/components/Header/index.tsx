@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderContainer, Logo, Nav, NavLink, ButtonWrapper, MobileMenuButton, MobileMenu, MobileNavLink, SocialLink } from './styles';
-import { Button } from '../Button';
+import { HeaderContainer, Logo, Nav, NavLink, RightGroup, MobileMenuButton, MobileMenu, MobileNavLink, SocialLink } from './styles';
 import { ThemeToggle } from '../ThemeToggle';
 import { CartIcon } from '../CartIcon';
 import { CartDrawer } from '../CartDrawer';
@@ -69,7 +68,7 @@ export const Header = () => {
           <NavLink onClick={goToProducts}>Produtos</NavLink>
         </Nav>
         
-        <ButtonWrapper>
+        <RightGroup>
           <SocialLink 
             href="https://www.instagram.com/jd_colorcopo/" 
             target="_blank" 
@@ -82,11 +81,10 @@ export const Header = () => {
           </SocialLink>
           <ThemeToggle />
           <CartIcon onClick={() => setCartOpen(true)} />
-          <Button variant="vibrant" onClick={goToProducts}>Faça seu orçamento!</Button>
           <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? '✕' : '☰'}
           </MobileMenuButton>
-        </ButtonWrapper>
+        </RightGroup>
       </HeaderContainer>
 
       <MobileMenu $isOpen={mobileMenuOpen}>
