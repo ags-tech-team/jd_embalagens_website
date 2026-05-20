@@ -11,16 +11,53 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     const element = document.getElementById(elementId);
     if (!element) return;
 
+    const cloneElement = element.cloneNode(true) as HTMLElement;
+
+    // Remove spans de emojis (causam o 'æ')
+    const emojiSpans = cloneElement.querySelectorAll('.products-title span, .category-title span');
+    emojiSpans.forEach(span => span.remove());
+
+    // Limpa texto dos títulos (remove caracteres estranhos)
+    const cleanText = (text: string) => {
+      return text.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ0-9\s\-']/g, '').trim();
+    };
+
+    const productTitle = cloneElement.querySelector('.products-title');
+    if (productTitle) productTitle.textContent = cleanText(productTitle.textContent || '');
+
+    const categoryTitles = cloneElement.querySelectorAll('.category-title');
+    categoryTitles.forEach(title => {
+      title.textContent = cleanText(title.textContent || '');
+    });
+
+    // Corrige URLs das imagens
+    const images = cloneElement.querySelectorAll('img');
+    await Promise.all(Array.from(images).map(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.startsWith('http') && !src.startsWith('data:')) {
+        img.src = window.location.origin + '/' + src;
+      }
+      return new Promise(resolve => {
+        if (img.complete) resolve(true);
+        else {
+          img.onload = () => resolve(true);
+          img.onerror = () => resolve(false);
+        }
+      });
+    }));
+
+    await new Promise(r => setTimeout(r, 300));
+
     const opt = {
       margin: [0.3, 0.3, 0.3, 0.3],
       filename: fileName,
       image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 1.5, useCORS: true, logging: false },
+      html2canvas: { scale: 2, useCORS: true, logging: false, allowTaint: false },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['css', 'legacy'] }
+      pagebreak: { mode: 'avoid-all' }
     };
 
-    await html2pdf().set(opt as any).from(element).save();
+    await html2pdf().set(opt as any).from(cloneElement).save();
   };
 
   return (

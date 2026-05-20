@@ -121,6 +121,14 @@ export const ProductCard = styled.div`
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 1rem;
   
+  /* Para evitar quebra de página dentro do card no PDF */
+  page-break-inside: avoid;
+  break-inside: avoid;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 35px rgba(0, 114, 188, 0.2);
@@ -130,6 +138,7 @@ export const ProductCard = styled.div`
 export const ProductImage = styled.img`
   width: 100%;
   height: auto;
+  max-height: 200px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 16px;
@@ -147,6 +156,12 @@ export const ProductName = styled.p`
   font-size: 0.85rem;
   color: ${props => props.theme.colors.text};
   background: ${props => props.theme.colors.cardBg};
+  
+  /* 🔧 IMPEDE QUEBRA DE PALAVRAS NO MEIO (tanto na tela quanto no PDF) */
+  word-break: keep-all;          /* Mantém palavras inteiras (nunca quebra no meio) */
+  white-space: normal;
+  overflow-wrap: normal;
+  hyphens: none;                 /* Remove qualquer hifenização */
   
   @media (min-width: 768px) {
     font-size: 0.9rem;

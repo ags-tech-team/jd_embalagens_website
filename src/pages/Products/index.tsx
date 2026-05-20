@@ -37,15 +37,18 @@ export const Products = () => {
     { key: 'copos', title: productsData.copos.title, icon: productsData.copos.icon, items: productsData.copos.items },
     { key: 'potes', title: productsData.potes.title, icon: productsData.potes.icon, items: productsData.potes.items },
     { key: 'sacolas', title: productsData.sacolas.title, icon: productsData.sacolas.icon, items: productsData.sacolas.items },
+    { key: 'caixas', title: productsData.caixas.title, icon: productsData.caixas.icon, items: productsData.caixas.items },
+    { key: 'isopor', title: productsData.isopor.title, icon: productsData.isopor.icon, items: productsData.isopor.items },
     { key: 'limpeza', title: productsData.limpeza.title, icon: productsData.limpeza.icon, items: productsData.limpeza.items },
-    { key: 'outros', title: productsData.outros.title, icon: productsData.outros.icon, items: productsData.outros.items }
+    { key: 'outros', title: productsData.outros.title, icon: productsData.outros.icon, items: productsData.outros.items },
+    { key: 'brindes', title: productsData.brindes.title, icon: productsData.brindes.icon, items: productsData.brindes.items }
   ];
 
   return (
     <>
       <ProductsWrapper id="catalog-pdf">
         <ProductsContainer>
-          <ProductsTitle>
+          <ProductsTitle className="products-title">
             <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>
           </ProductsTitle>
           <ProductsSubtitle>
@@ -53,21 +56,22 @@ export const Products = () => {
           </ProductsSubtitle>
 
           {categories.map((category) => (
-            <CategorySection key={category.key}>
-              <CategoryTitle>
+            <CategorySection key={category.key} className="category-section">
+              <CategoryTitle className="category-title">
                 <span>{category.icon}</span> {category.title}
               </CategoryTitle>
               
               <ProductGrid>
                 {category.items.map((product) => (
-                  <ProductCard key={product.id} onClick={() => handleProductClick(product)}>
+                  <ProductCard key={product.id} className="product-card" onClick={() => handleProductClick(product)}>
                     <ProductImage 
+                      className="product-image"
                       src={product.image} 
                       alt={product.name} 
                       fetchPriority="high" 
                       decoding="sync" 
                     />
-                    <ProductName>{product.name}</ProductName>
+                    <ProductName className="product-name">{product.name}</ProductName>
                   </ProductCard>
                 ))}
               </ProductGrid>

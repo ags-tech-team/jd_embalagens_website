@@ -11,6 +11,67 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Estilos para impressão / PDF -->
+    <style>
+      @media print {
+        /* Remove spans com emojis que causavam 'æ' */
+        .products-title span,
+        .category-title span {
+          display: none !important;
+        }
+
+        /* Remove pseudo-elementos que podem injetar texto */
+        .category-title::before,
+        .category-title::after,
+        .products-title::before,
+        .products-title::after {
+          content: none !important;
+          display: none !important;
+        }
+
+        /* Força cada categoria começar em nova página */
+        .category-section {
+          page-break-before: always;
+        }
+        .category-section:first-of-type {
+          page-break-before: avoid;
+        }
+
+        /* Ajusta a grade para usar 3 colunas (aproveita melhor o A4) */
+        .product-grid {
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 1rem !important;
+        }
+
+        /* Card individual – sem quebra de página dentro */
+        .product-card {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          padding: 0.5rem !important;
+          min-height: auto !important;
+          box-shadow: none !important;
+        }
+
+        .product-image {
+          max-height: 140px !important;
+          width: 100% !important;
+          object-fit: cover !important;
+        }
+
+        .product-name {
+          font-size: 10pt !important;
+          white-space: normal !important;
+          word-break: keep-all !important;      
+          word-wrap: normal !important;
+          overflow-wrap: normal !important;
+          hyphens: none !important;              
+          text-align: center !important;
+          padding: 0.5rem 0.2rem !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>Você precisa habilitar o JavaScript para executar este aplicativo.</noscript>
