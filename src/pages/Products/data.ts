@@ -1,6 +1,6 @@
 export const productsData = {
   copos: {
-    title: "COPOS",
+    title: "JD Color Copos",
     icon: "🥤",
     items: [
       { id: 1, name: "Copo PP 330ml", image: "products_optmized/copoPP330.png" },
@@ -15,7 +15,7 @@ export const productsData = {
     ]
   },
   potes: {
-    title: "POTES",
+    title: "JD Color Potes",
     icon: "🍨",
     items: [
       { id: 11, name: "Pote PET 250ml", image: "products_optmized/potePet250.png" },
@@ -25,7 +25,7 @@ export const productsData = {
     ]
   },
   sacolas: {
-    title: "SACOLAS PERSONALIZADAS",
+    title: "JD Color Sacolas",
     icon: "🛍️",
     items: [
       { id: 15, name: "Saco pra Lanche", image: "products_optmized/sacoLanche.png" },
@@ -36,7 +36,7 @@ export const productsData = {
     ]
   },
   caixas: {
-    title: "CAIXAS DE PAPELÃO E PET PERSONALIZADAS",
+    title: "JD Color Caixas",
     icon: "📦",
     items: [
       { id: 18, name: "Caixa de Pizza", image: "products_optmized/caixaPizza.png" },
@@ -45,7 +45,7 @@ export const productsData = {
     ]
   },
   isopor: {
-    title: "EMBALAGENS DE ISOPOR PERSONALIZADAS",
+    title: "JD Color Isopor",
     icon: "🧊",
     items: [
       { id: 24, name: "Marmita de Isopor", image: "products_optmized/marmitaIsopor.png" },
@@ -54,7 +54,7 @@ export const productsData = {
     ]
   },
   outros: {
-    title: "PRODUTOS DE AUTOMAÇÃO PERSONALIZADOS E MUITO MAIS",
+    title: "JD Color Produtos para Automoção",
     icon: "📦",
     items: [
       { id: 22, name: "Etiqueta de Preço", image: "products_optmized/EtiquetaPreço.png" },
@@ -64,7 +64,7 @@ export const productsData = {
     ]
   },
   limpeza: {
-    title: "LIMPEZA e HIGIENE",
+    title: "JD Color Limpeza e Higiene",
     icon: "🧹",
     items: [
       { id: 25, name: "Produtos de Limpeza", image: "products_optmized/produtosLimpeza.png" },
@@ -74,7 +74,7 @@ export const productsData = {
     ]
   },
   brindes: {
-    title: "BRINDES E MUITO MAIS",
+    title: "JD Color Brindes em Geral",
     icon: "🎁",
     items: [
       { id: 29, name: "Lixeira para Carro", image: "products_optmized/lixeiraCarro.png" },
