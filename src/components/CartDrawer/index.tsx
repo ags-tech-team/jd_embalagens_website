@@ -29,14 +29,14 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
     const itemsList = cart.map(item => `- ${item.name}`).join('\n');
     const totalItems = cart.length;
     
-    const message = `*PEDIDO JD EMBALAGENS*
+    const message = `*PEDIDO JD Color Copo & Pack Clean*
 
 *Produtos selecionados:*
 ${itemsList}
 
 *Total de itens:* ${totalItems} ${totalItems === 1 ? 'produto' : 'produtos'}
 
-*Cliente:* via site JD Embalagens
+*Cliente:* via site JD Color Copo & Pack Clean
 
 *Observações:* Gostaria de receber um orçamento para estes produtos.`;
 
