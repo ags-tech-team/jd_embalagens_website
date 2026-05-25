@@ -46,7 +46,7 @@ export const Products = () => {
 
   return (
     <>
-      <ProductsWrapper id="catalog-pdf">
+      <ProductsWrapper>
         <ProductsContainer>
           <ProductsTitle className="products-title">
             <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>
@@ -80,7 +80,10 @@ export const Products = () => {
         </ProductsContainer>
       </ProductsWrapper>
       
-      <PDFButton elementId="catalog-pdf" fileName="catalogo-jd-embalagens.pdf" />
+      <PDFButton
+        categories={categories}
+        fileName="catalogo-jd-embalagens.pdf"
+      />
       
       <ProductModal 
         isOpen={modalOpen}
