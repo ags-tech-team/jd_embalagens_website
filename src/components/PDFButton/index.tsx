@@ -51,84 +51,79 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
 
     const style = document.createElement('style');
     style.textContent = `
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      .products-container { padding: 0.4rem !important; }
-      .products-title { font-size: 1.4rem !important; text-align: center !important; margin-bottom: 0.4rem !important; color: #0072BC !important; }
-      .products-subtitle { font-size: 0.8rem !important; text-align: center !important; margin-bottom: 0.8rem !important; }
-      .category-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem !important; }
-      .category-title { font-size: 1rem !important; margin: 0.3rem 0 0.5rem !important; padding-left: 0.5rem !important; border-left: 3px solid #00AEEF !important; }
-      
-      /* Grid padrão para desktop */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .products-container { padding: 0.4rem !important; }
+    .products-title { font-size: 1.4rem !important; text-align: center !important; margin-bottom: 0.4rem !important; color: #0072BC !important; }
+    .products-subtitle { font-size: 0.8rem !important; text-align: center !important; margin-bottom: 0.8rem !important; }
+    .category-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem !important; }
+    .category-title { font-size: 1rem !important; margin: 0.3rem 0 0.5rem !important; padding-left: 0.5rem !important; border-left: 3px solid #00AEEF !important; }
+    
+    .product-grid { 
+      display: grid !important; 
+      grid-template-columns: repeat(5, 1fr) !important; 
+      gap: 0.5rem !important; 
+    }
+    
+    .product-card { 
+      padding: 0.3rem !important; 
+      border-radius: 8px !important; 
+      box-shadow: none !important; 
+      page-break-inside: avoid !important; 
+      break-inside: avoid !important; 
+      min-height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    
+    .product-image { 
+      width: 100% !important; 
+      height: auto !important;
+      min-height: 80px !important;
+      max-height: 100px !important;
+      aspect-ratio: 1 / 1 !important;
+      object-fit: cover !important;
+      border-radius: 8px !important;
+      background: #f5f5f5 !important;
+    }
+    
+    .product-name { 
+      font-size: 0.65rem !important; 
+      padding: 0.3rem 0.1rem !important; 
+      text-align: center !important; 
+      word-break: break-word !important; 
+      line-height: 1.2 !important; 
+    }
+    
+    @media (max-width: 768px) {
       .product-grid { 
-        display: grid !important; 
-        grid-template-columns: repeat(5, 1fr) !important; 
-        gap: 0.5rem !important; 
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 0.3rem !important;
       }
-      
-      /* Cards */
       .product-card { 
-        padding: 0.3rem !important; 
-        border-radius: 8px !important; 
-        box-shadow: none !important; 
-        page-break-inside: avoid !important; 
-        break-inside: avoid !important; 
-        min-height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        padding: 0.2rem !important;
       }
-      
-      /* Imagens - FORÇA O ASPECTO CORRETO */
       .product-image { 
-        width: 100% !important; 
-        height: auto !important;
-        min-height: 80px !important;
-        max-height: 100px !important;
-        aspect-ratio: 1 / 1 !important;
+        min-height: 70px !important;
+        max-height: 80px !important;
         object-fit: cover !important;
-        border-radius: 8px !important;
-        background: ${props => props.theme.colors.gray} !important;
       }
-      
       .product-name { 
-        font-size: 0.65rem !important; 
-        padding: 0.3rem 0.1rem !important; 
-        text-align: center !important; 
-        word-break: break-word !important; 
-        line-height: 1.2 !important; 
+        font-size: 0.55rem !important; 
+        padding: 0.2rem 0.05rem !important;
       }
-      
-      /* Responsivo para mobile (PDF) */
-      @media (max-width: 768px) {
-        .product-grid { 
-          grid-template-columns: repeat(3, 1fr) !important; 
-          gap: 0.3rem !important;
-        }
-        .product-card { 
-          padding: 0.2rem !important;
-        }
-        .product-image { 
-          min-height: 70px !important;
-          max-height: 80px !important;
-          object-fit: cover !important;
-        }
-        .product-name { 
-          font-size: 0.55rem !important; 
-          padding: 0.2rem 0.05rem !important;
-        }
+    }
+    
+    @media print {
+      .product-grid { 
+        grid-template-columns: repeat(5, 1fr) !important; 
       }
-      
-      /* Impressão */
-      @media print {
-        .product-grid { 
-          grid-template-columns: repeat(5, 1fr) !important; 
-        }
-        .product-image { 
-          max-height: 80px !important;
-          object-fit: cover !important;
-        }
+      .product-image { 
+        max-height: 80px !important;
+        object-fit: cover !important;
       }
-    `;
+    }
+  `;
     cloneElement.prepend(style);
 
     await new Promise(r => setTimeout(r, 300));
