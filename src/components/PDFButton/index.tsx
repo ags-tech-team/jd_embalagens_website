@@ -51,103 +51,29 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
 
     const style = document.createElement('style');
     style.textContent = `
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    .products-container { padding: 0.4rem !important; }
-    .products-title { font-size: 1.4rem !important; text-align: center !important; margin-bottom: 0.4rem !important; color: #0072BC !important; }
-    .products-subtitle { font-size: 0.8rem !important; text-align: center !important; margin-bottom: 0.8rem !important; }
-    .category-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem !important; }
-    .category-title { font-size: 1rem !important; margin: 0.3rem 0 0.5rem !important; padding-left: 0.5rem !important; border-left: 3px solid #00AEEF !important; }
-    
-    .product-grid { 
-      display: grid !important; 
-      grid-template-columns: repeat(5, 1fr) !important; 
-      gap: 0.5rem !important; 
-    }
-    
-    .product-card { 
-      padding: 0.3rem !important; 
-      border-radius: 8px !important; 
-      box-shadow: none !important; 
-      page-break-inside: avoid !important; 
-      break-inside: avoid !important; 
-      min-height: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-    }
-    
-    .product-image { 
-      width: 100% !important; 
-      height: auto !important;
-      min-height: 30px !important;
-      max-height: 100px !important;
-      aspect-ratio: 1 / 1 !important;
-      object-fit: cover !important;
-      border-radius: 8px !important;
-      background: #f5f5f5 !important;
-    }
-    
-    .product-name { 
-      font-size: 0.65rem !important; 
-      padding: 0.3rem 0.1rem !important; 
-      text-align: center !important; 
-      word-break: break-word !important; 
-      line-height: 1.2 !important; 
-    }
-    
-    .pdf-version {
-      text-align: center;
-      font-size: 0.5rem;
-      color: #999;
-      margin-top: 0.5rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid #eee;
-    }
-    
-    @media (max-width: 768px) {
-      .product-grid { 
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 0.3rem !important;
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .products-container { padding: 0.4rem !important; }
+      .products-title { font-size: 1.4rem !important; text-align: center !important; margin-bottom: 0.4rem !important; color: #0072BC !important; }
+      .products-subtitle { font-size: 0.8rem !important; text-align: center !important; margin-bottom: 0.8rem !important; }
+      .category-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem !important; }
+      .category-title { font-size: 1rem !important; margin: 0.3rem 0 0.5rem !important; padding-left: 0.5rem !important; border-left: 3px solid #00AEEF !important; }
+      .product-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0.5rem !important; }
+      .product-card { padding: 0.3rem !important; border-radius: 8px !important; box-shadow: none !important; page-break-inside: avoid !important; break-inside: avoid !important; min-height: auto !important; }
+      .product-image { width: 100% !important; max-height: 90px !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important; border-radius: 6px !important; }
+      .product-name { font-size: 0.65rem !important; padding: 0.3rem 0.1rem !important; text-align: center !important; word-break: keep-all !important; line-height: 1.2 !important; }
+      @media print {
+        .product-grid { grid-template-columns: repeat(4, 1fr) !important; }
       }
-      .product-card { 
-        padding: 0.2rem !important;
-        height: 370px !important;
-      }
-      .product-image { 
-        height: 370px !important;
-        object-fit: cover !important;
-        
-      }
-      .product-name { 
-        font-size: 0.55rem !important; 
-        padding: 0.2rem 0.05rem !important;
-      }
-    }
-    
-    @media print {
-      .product-grid { 
-        grid-template-columns: repeat(5, 1fr) !important; 
-      }
-      .product-image { 
-        max-height: 280px !important;
-        object-fit: cover !important;
-      }
-    }
-  `;
+    `;
     cloneElement.prepend(style);
 
     await new Promise(r => setTimeout(r, 300));
-
-    const versionDiv = document.createElement('div');
-    versionDiv.className = 'pdf-version';
-    versionDiv.textContent = 'v2.1 - JD Embalagens';
-    cloneElement.appendChild(versionDiv);
 
     const opt = {
       margin: [0.3, 0.3, 0.3, 0.3],
       filename: fileName,
       image: { type: 'jpeg', quality: 0.9 },
-      html2canvas: { scale: 2, useCORS: true, logging: false, allowTaint: false },
+      html2canvas: { scale: 2.5, useCORS: true, logging: false, allowTaint: false },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: 'avoid-all' } 
     };
