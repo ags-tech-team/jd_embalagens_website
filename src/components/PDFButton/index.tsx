@@ -106,11 +106,12 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     
     @media (max-width: 768px) {
       .product-grid { 
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 0.3rem !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 0.2rem !important;
       }
       .product-card { 
         padding: 0.2rem !important;
+        height: 370px !important;
       }
       .product-image { 
         height: 370px !important;
