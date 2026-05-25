@@ -79,8 +79,8 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     .product-image { 
       width: 100% !important; 
       height: auto !important;
-      min-height: 80px !important;
-      max-height: 100px !important;
+      min-height: 300px !important;
+      max-height: 400px !important;
       aspect-ratio: 1 / 1 !important;
       object-fit: cover !important;
       border-radius: 8px !important;
