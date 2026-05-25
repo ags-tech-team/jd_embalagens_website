@@ -82,7 +82,7 @@ export const Products = () => {
       
       <PDFButton
         categories={categories}
-        fileName="catalogo-jd-embalagens.pdf"
+        fileName="catalogo-jd-color-copo-&-pack-clean.pdf"
       />
       
       <ProductModal 
