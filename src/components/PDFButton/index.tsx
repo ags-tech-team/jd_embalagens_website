@@ -141,7 +141,7 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
 
     const versionDiv = document.createElement('div');
     versionDiv.className = 'pdf-version';
-    versionDiv.textContent = 'v2.1 - JD Embalagens';
+    versionDiv.textContent = 'v2.2 - JD Embalagens';
     cloneElement.appendChild(versionDiv);
 
     const opt = {
