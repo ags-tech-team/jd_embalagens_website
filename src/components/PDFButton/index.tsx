@@ -11,23 +11,19 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     const originalElement = document.getElementById(elementId);
     if (!originalElement) return;
 
-    // 1. Clona o elemento
     let cloneElement = originalElement.cloneNode(true) as HTMLElement;
 
-    // 2. Cria um container off-screen com largura fixa (ignora responsividade do celular)
     const container = document.createElement('div');
     container.style.position = 'absolute';
     container.style.left = '-9999px';
     container.style.top = '-9999px';
-    container.style.width = '1000px'; // força largura de desktop
+    container.style.width = '1000px'; 
     container.appendChild(cloneElement);
     document.body.appendChild(container);
 
-    // 3. Remove spans de emojis (causam "æ")
     const emojiSpans = cloneElement.querySelectorAll('.products-title span, .category-title span');
     emojiSpans.forEach(span => span.remove());
 
-    // 4. Limpa texto dos títulos (remove caracteres estranhos)
     const cleanText = (text: string) => {
       return text.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ0-9\s\-']/g, '').trim();
     };
@@ -38,11 +34,9 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       title.textContent = cleanText(title.textContent || '');
     });
 
-    // 5. Esconde botões (não queremos eles no PDF)
     const buttons = cloneElement.querySelectorAll('button');
     buttons.forEach(btn => (btn as HTMLElement).style.display = 'none');
 
-    // 6. Converte URLs das imagens para absolutas e aguarda carregamento
     const images = cloneElement.querySelectorAll('img');
     await Promise.all(Array.from(images).map(img => {
       const src = img.getAttribute('src');
@@ -55,7 +49,6 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       });
     }));
 
-    // 7. Injeta estilos fixos para o PDF (grid 4 colunas, tamanhos compactos)
     const style = document.createElement('style');
     style.textContent = `
       * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,32 +57,86 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       .products-subtitle { font-size: 0.8rem !important; text-align: center !important; margin-bottom: 0.8rem !important; }
       .category-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1rem !important; }
       .category-title { font-size: 1rem !important; margin: 0.3rem 0 0.5rem !important; padding-left: 0.5rem !important; border-left: 3px solid #00AEEF !important; }
-      .product-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0.5rem !important; }
-      .product-card { padding: 0.3rem !important; border-radius: 8px !important; box-shadow: none !important; page-break-inside: avoid !important; break-inside: avoid !important; min-height: auto !important; }
-      .product-image { width: 100% !important; max-height: 90px !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important; border-radius: 6px !important; }
-      .product-name { font-size: 0.65rem !important; padding: 0.3rem 0.1rem !important; text-align: center !important; word-break: keep-all !important; line-height: 1.2 !important; }
+      
+      /* Grid padrão para desktop */
+      .product-grid { 
+        display: grid !important; 
+        grid-template-columns: repeat(5, 1fr) !important; 
+        gap: 0.5rem !important; 
+      }
+      
+      /* Cards */
+      .product-card { 
+        padding: 0.3rem !important; 
+        border-radius: 8px !important; 
+        box-shadow: none !important; 
+        page-break-inside: avoid !important; 
+        break-inside: avoid !important; 
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      
+      /* Imagens - mantém proporção quadrada */
+      .product-image { 
+        width: 100% !important; 
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        object-fit: contain !important;
+        border-radius: 6px !important;
+        background: #f5f5f5 !important;
+        padding: 4px !important;
+      }
+      
+      .product-name { 
+        font-size: 0.65rem !important; 
+        padding: 0.3rem 0.1rem !important; 
+        text-align: center !important; 
+        word-break: keep-all !important; 
+        line-height: 1.2 !important; 
+      }
+      
+      /* Responsivo para mobile (PDF) */
+      @media (max-width: 768px) {
+        .product-grid { 
+          grid-template-columns: repeat(3, 1fr) !important; 
+          gap: 0.4rem !important;
+        }
+        .product-image { 
+          max-height: 80px !important;
+        }
+        .product-name { 
+          font-size: 0.55rem !important; 
+        }
+      }
+      
+      /* Impressão */
       @media print {
-        .product-grid { grid-template-columns: repeat(4, 1fr) !important; }
+        .product-grid { 
+          grid-template-columns: repeat(5, 1fr) !important; 
+        }
+        .product-image { 
+          object-fit: contain !important;
+          max-height: 70px !important;
+        }
       }
     `;
     cloneElement.prepend(style);
 
-    // Pequeno delay para garantir que os estilos sejam aplicados
     await new Promise(r => setTimeout(r, 300));
 
-    // 8. Configurações otimizadas para o PDF
     const opt = {
       margin: [0.3, 0.3, 0.3, 0.3],
       filename: fileName,
       image: { type: 'jpeg', quality: 0.9 },
-      html2canvas: { scale: 2.5, useCORS: true, logging: false, allowTaint: false },
+      html2canvas: { scale: 2, useCORS: true, logging: false, allowTaint: false },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: 'avoid-all' } // evita quebras dentro dos cards
+      pagebreak: { mode: 'avoid-all' } 
     };
 
     await html2pdf().set(opt as any).from(cloneElement).save();
 
-    // 9. Remove o container off-screen
     document.body.removeChild(container);
   };
 
