@@ -41,7 +41,7 @@ const imgToBase64 = (img: HTMLImageElement): string => {
   }
 };
 
-export const PDFButton = ({ categories, fileName = 'catalogo-jd-colorcopo-&-packclean.pdf' }: PDFButtonProps) => {
+export const PDFButton = ({ categories, fileName = 'catalogo-jd-color-copo-&-pack-clean.pdf' }: PDFButtonProps) => {
 
   const generatePDF = async () => {
 
