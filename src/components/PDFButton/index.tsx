@@ -106,8 +106,8 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     
     @media (max-width: 768px) {
       .product-grid { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 0.2rem !important;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 0.3rem !important;
       }
       .product-card { 
         padding: 0.2rem !important;
@@ -115,6 +115,7 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       }
       .product-image { 
         height: 370px !important;
+        object-fit: cover !important;
         
       }
       .product-name { 
@@ -128,7 +129,7 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
         grid-template-columns: repeat(5, 1fr) !important; 
       }
       .product-image { 
-        max-height: 80px !important;
+        max-height: 280px !important;
         object-fit: cover !important;
       }
     }
