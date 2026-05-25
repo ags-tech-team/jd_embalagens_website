@@ -40,7 +40,7 @@ export const FaqSection = () => {
     },
     {
       question: "Quando receberei minha entrega?",
-      answer: "O prazo estimado de produção é de 20 dias úteis, contando a partir da aprovação da arte final. Após a produção, o prazo de entrega dependerá do tempo estimado pela transportadora, que varia conforme a localização.\n\nCaso tenha dúvidas ou precise de mais informações sobre os prazos, nossa equipe estará à disposição para ajudar!"
+      answer: "O prazo estimado de produção é de 5 a 15 dias úteis, dependendo da demanda ou da transportadora, contando a partir da aprovação da arte final. Após a produção, o prazo de entrega dependerá do tempo estimado pela transportadora, que varia conforme a localização.\n\nCaso tenha dúvidas ou precise de mais informações sobre os prazos, nossa equipe estará à disposição para ajudar!"
     },
     {
       question: "Qual o pedido mínimo?",
