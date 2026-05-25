@@ -95,6 +95,16 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       line-height: 1.2 !important; 
     }
     
+    /* VERSÃO 2.1 - TESTE */
+    .pdf-version {
+      text-align: center;
+      font-size: 0.5rem;
+      color: #999;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #eee;
+    }
+    
     @media (max-width: 768px) {
       .product-grid { 
         grid-template-columns: repeat(3, 1fr) !important; 
@@ -127,6 +137,11 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     cloneElement.prepend(style);
 
     await new Promise(r => setTimeout(r, 300));
+
+    const versionDiv = document.createElement('div');
+    versionDiv.className = 'pdf-version';
+    versionDiv.textContent = 'v2.1 - JD Embalagens';
+    cloneElement.appendChild(versionDiv);
 
     const opt = {
       margin: [0.3, 0.3, 0.3, 0.3],
