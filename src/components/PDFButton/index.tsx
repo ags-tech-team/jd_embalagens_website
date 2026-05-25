@@ -60,12 +60,12 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     
     .product-grid { 
       display: grid !important; 
-      grid-template-columns: repeat(4, 1fr) !important; 
-      gap: 0.8rem !important; 
+      grid-template-columns: repeat(5, 1fr) !important; 
+      gap: 0.5rem !important; 
     }
     
     .product-card { 
-      padding: 0.5rem !important; 
+      padding: 0.3rem !important; 
       border-radius: 8px !important; 
       box-shadow: none !important; 
       page-break-inside: avoid !important; 
@@ -74,64 +74,62 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
-      background: white !important;
     }
     
-    /* MUDANÇA AQUI: object-fit: contain para não achatar + altura maior */
     .product-image { 
       width: 100% !important; 
-      height: 120px !important;
+      height: auto !important;
+      min-height: 80px !important;
+      max-height: 100px !important;
       aspect-ratio: 1 / 1 !important;
-      object-fit: contain !important;
+      object-fit: cover !important;
       border-radius: 8px !important;
       background: #f5f5f5 !important;
-      padding: 8px !important;
     }
     
     .product-name { 
-      font-size: 0.7rem !important; 
-      padding: 0.5rem 0.2rem !important; 
+      font-size: 0.65rem !important; 
+      padding: 0.3rem 0.1rem !important; 
       text-align: center !important; 
       word-break: break-word !important; 
-      line-height: 1.3 !important; 
-      font-weight: 500 !important;
+      line-height: 1.2 !important; 
     }
     
-    /* VERSÃO 3.0 - IMAGENS CORRIGIDAS */
     .pdf-version {
       text-align: center;
       font-size: 0.5rem;
       color: #999;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       padding-top: 0.5rem;
       border-top: 1px solid #eee;
     }
     
     @media (max-width: 768px) {
       .product-grid { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 0.5rem !important;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 0.3rem !important;
       }
       .product-card { 
-        padding: 0.4rem !important;
+        padding: 0.2rem !important;
       }
       .product-image { 
-        height: 100px !important;
-        padding: 6px !important;
+        min-height: 70px !important;
+        max-height: 80px !important;
+        object-fit: cover !important;
       }
       .product-name { 
-        font-size: 0.65rem !important; 
-        padding: 0.3rem 0.1rem !important;
+        font-size: 0.55rem !important; 
+        padding: 0.2rem 0.05rem !important;
       }
     }
     
     @media print {
       .product-grid { 
-        grid-template-columns: repeat(4, 1fr) !important; 
+        grid-template-columns: repeat(5, 1fr) !important; 
       }
       .product-image { 
-        height: 100px !important;
-        object-fit: contain !important;
+        max-height: 80px !important;
+        object-fit: cover !important;
       }
     }
   `;
@@ -141,7 +139,7 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
 
     const versionDiv = document.createElement('div');
     versionDiv.className = 'pdf-version';
-    versionDiv.textContent = 'v2.2 - JD Embalagens';
+    versionDiv.textContent = 'v2.1 - JD Embalagens';
     cloneElement.appendChild(versionDiv);
 
     const opt = {
