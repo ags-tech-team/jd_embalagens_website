@@ -37,6 +37,7 @@ export const Products = () => {
     { key: 'copos', title: productsData.copos.title, icon: productsData.copos.icon, items: productsData.copos.items },
     { key: 'potes', title: productsData.potes.title, icon: productsData.potes.icon, items: productsData.potes.items },
     { key: 'sacolas', title: productsData.sacolas.title, icon: productsData.sacolas.icon, items: productsData.sacolas.items },
+    { key: 'sacosPapel', title: productsData.sacosPapel.title, icon: productsData.sacosPapel.icon, items: productsData.sacosPapel.items },
     { key: 'caixas', title: productsData.caixas.title, icon: productsData.caixas.icon, items: productsData.caixas.items },
     { key: 'isopor', title: productsData.isopor.title, icon: productsData.isopor.icon, items: productsData.isopor.items },
     { key: 'limpeza', title: productsData.limpeza.title, icon: productsData.limpeza.icon, items: productsData.limpeza.items },
@@ -80,9 +81,10 @@ export const Products = () => {
         </ProductsContainer>
       </ProductsWrapper>
       
-      <PDFButton
-        categories={categories}
-        fileName="catalogo-jd-color-copo-&-pack-clean.pdf"
+      {/* Agora passamos categories diretamente, sem elementId */}
+      <PDFButton 
+        categories={categories} 
+        fileName="catalogo-jd-color-copo-&-pack-clean.pdf" 
       />
       
       <ProductModal 

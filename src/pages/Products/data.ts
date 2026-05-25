@@ -28,11 +28,17 @@ export const productsData = {
     title: "JD Sacolas",
     icon: "🛍️",
     items: [
-      { id: 15, name: "Saco pra Lanche", image: "products_optimized/sacoLanche.webp" },
-      { id: 16, name: "Saco de Delivery", image: "products_optimized/sacoDelivery.webp" },
-      { id: 17, name: "Saco para Pães", image: "products_optimized/sacoPaes.webp" },
       { id: 20, name: "Sacola de Papel", image: "products_optimized/sacolaPapel.webp" },
       { id: 33, name: "Sacola de Boca Palhaço", image: "products_optimized/sacolabocapalhaco.webp" }
+    ]
+  },
+  sacosPapel: {
+    title: "JD Sacos de Papel",
+    icon: "📄",
+    items: [
+      { id: 15, name: "Saco pra Lanche", image: "products_optimized/sacoLanche.webp" },
+      { id: 16, name: "Saco de Delivery", image: "products_optimized/sacoDelivery.webp" },
+      { id: 17, name: "Saco para Pães", image: "products_optimized/sacoPaes.webp" }
     ]
   },
   caixas: {
@@ -54,7 +60,7 @@ export const productsData = {
     ]
   },
   outros: {
-    title: "JD Produtos para Automoção",
+    title: "JD Produtos para Automação",
     icon: "📦",
     items: [
       { id: 22, name: "Etiqueta de Preço", image: "products_optimized/EtiquetaPreço.webp" },
