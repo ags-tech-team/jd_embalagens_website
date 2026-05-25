@@ -38,21 +38,21 @@ export const WorkPreview = () => {
   }, [isVisible]);
 
   const coposPotes = [
-    { id: 1, image: 'products/copoPP330.png', title: 'Copo Personalizado' },
-    { id: 2, image: 'products/copoStanley.png', title: 'Copo Térmico' },
-    { id: 3, image: 'products/poteIsopor.png', title: 'Pote para Sorvete' },
-    { id: 4, image: 'products/copoTwister.png', title: 'Copo com Tampa' },
-    { id: 5, image: 'products/copoDePapel.png', title: 'Pote para Açaí' },
-    { id: 6, image: 'products/copoLongDrink.png', title: 'Copo Long Drink' },
+    { id: 1, image: 'products_optimized/copoPP330.webp', title: 'Copo Personalizado' },
+    { id: 2, image: 'products_optimized/copoStanley.webp', title: 'Copo Térmico' },
+    { id: 3, image: 'products_optimized/poteIsopor.webp', title: 'Pote para Sorvete' },
+    { id: 4, image: 'products_optimized/copoTwister.webp', title: 'Copo com Tampa' },
+    { id: 5, image: 'products_optimized/copoDePapel.webp', title: 'Pote para Açaí' },
+    { id: 6, image: 'products_optimized/copoLongDrink.webp', title: 'Copo Long Drink' },
   ];
 
   const outrasEmbalagens = [
-    { id: 1, image: 'products/sacoLanche.png', title: 'Saco para Pipoca' },
-    { id: 2, image: 'products/caixaPizza.png', title: 'Caixa de Pizza' },
-    { id: 3, image: 'products/caixaSalgado.png', title: 'Embalagem para Salgado' },
-    { id: 4, image: 'products/sacolaPapel.png', title: 'Sacola de Papel' },
-    { id: 5, image: 'products/potePet250.png', title: 'Pote PET 250ml' },
-    { id: 6, image: 'products/sacoPaes.png', title: 'Saco para Pão' },
+    { id: 1, image: 'products_optimized/sacoLanche.webp', title: 'Saco para Pipoca' },
+    { id: 2, image: 'products_optimized/caixaPizza.webp', title: 'Caixa de Pizza' },
+    { id: 3, image: 'products_optimized/caixaSalgado.webp', title: 'Embalagem para Salgado' },
+    { id: 4, image: 'products_optimized/sacolaPapel.webp', title: 'Sacola de Papel' },
+    { id: 5, image: 'products_optimized/potePet250.webp', title: 'Pote PET 250ml' },
+    { id: 6, image: 'products_optimized/sacoPaes.webp', title: 'Saco para Pão' },
   ];
 
   return (

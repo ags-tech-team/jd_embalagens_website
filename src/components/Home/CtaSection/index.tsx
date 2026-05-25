@@ -42,7 +42,7 @@ export const CtaSection = ({ onButtonClick }: CtaSectionProps) => {
         </CtaContent>
         <CtaImage $isVisible={isVisible}>
           <img 
-            src="products/potePapel.png " 
+            src="products_optimized/potePapel.webp " 
             alt="Embalagens personalizadas JD"
           />
         </CtaImage>

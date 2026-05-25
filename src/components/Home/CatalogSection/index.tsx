@@ -33,7 +33,7 @@ export const CatalogSection = ({ onButtonClick }: CatalogSectionProps) => {
       <CatalogWrapper>
         <CatalogImage $isVisible={isVisible}>
           <img 
-            src="products/copoPP550.png" 
+            src="products_optimized/copoPP550.webp" 
             alt="Catálogo de embalagens JD"
           />
         </CatalogImage>
