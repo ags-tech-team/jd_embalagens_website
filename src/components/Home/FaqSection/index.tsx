@@ -36,7 +36,7 @@ export const FaqSection = () => {
   const faqs = [
     {
       question: "Como fazer um pedido?",
-      answer: "Você pode realizar seu pedido de duas formas:\n\n1. Via WhatsApp: Entre em contato com um de nossos consultores. Ele entenderá sua necessidade, montará a proposta e ajudará você a concluir o pedido.\n\n2. Via formulário: Preencha o formulário disponível em nosso site com todas as informações sobre as embalagens que você precisa. Um de nossos consultores analisará sua solicitação e enviará uma proposta personalizada."
+      answer: "Você pode realizar seu pedido de duas formas:\n\n1. Via WhatsApp: Entre em contato com um de nossos consultores. Ele entenderá sua necessidade, montará a proposta e ajudará você a concluir o pedido.\n\n2. Via WebSite: Vá na aba de produtos, selecione todos os produtos que deseja, após isso entre no seu carrinho de compras e clique em 'Fazer Orçamento', você será redirecionado para o canal de comunicação com um de nossos consultores e lá ele finalizara o seu pedido."
     },
     {
       question: "Quando receberei minha entrega?",
