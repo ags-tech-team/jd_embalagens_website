@@ -11,24 +11,22 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
     const originalElement = document.getElementById(elementId);
     if (!originalElement) return;
 
-    // Clona o elemento
     let cloneElement = originalElement.cloneNode(true) as HTMLElement;
 
-    // Container fora da tela
     const container = document.createElement('div');
     container.style.position = 'absolute';
     container.style.left = '-9999px';
     container.style.top = '-9999px';
     container.style.width = '1200px';
-    container.style.background = 'white';
+    container.style.background = '#ffffff';
     container.appendChild(cloneElement);
     document.body.appendChild(container);
 
-    // Remove spans de emojis
+    // Remove emojis
     const emojiSpans = cloneElement.querySelectorAll('.products-title span, .category-title span');
     emojiSpans.forEach(span => span.remove());
 
-    // Limpa textos dos títulos
+    // Limpa textos
     const cleanText = (text: string) => {
       return text.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ0-9\s\-']/g, '').trim();
     };
@@ -61,52 +59,26 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       });
     }));
 
-    // Força estilos inline para garantir
-    const allProductCards = cloneElement.querySelectorAll('.product-card');
-    allProductCards.forEach((card) => {
-      (card as HTMLElement).style.display = 'flex';
-      (card as HTMLElement).style.flexDirection = 'column';
-      (card as HTMLElement).style.alignItems = 'center';
-      (card as HTMLElement).style.padding = '8px';
-      (card as HTMLElement).style.margin = '4px';
-      (card as HTMLElement).style.borderRadius = '12px';
-      (card as HTMLElement).style.backgroundColor = '#ffffff';
-    });
-
-    const allProductImages = cloneElement.querySelectorAll('.product-image');
-    allProductImages.forEach((img) => {
-      (img as HTMLElement).style.width = '100%';
-      (img as HTMLElement).style.maxWidth = '100px';
-      (img as HTMLElement).style.height = 'auto';
-      (img as HTMLElement).style.aspectRatio = '1/1';
-      (img as HTMLElement).style.objectFit = 'contain';
-      (img as HTMLElement).style.display = 'block';
-      (img as HTMLElement).style.margin = '0 auto';
-    });
-
-    const allProductNames = cloneElement.querySelectorAll('.product-name');
-    allProductNames.forEach((name) => {
-      (name as HTMLElement).style.fontSize = '0.7rem';
-      (name as HTMLElement).style.padding = '8px 4px';
-      (name as HTMLElement).style.textAlign = 'center';
-      (name as HTMLElement).style.wordBreak = 'break-word';
-    });
-
-    // Estilos CSS robustos
+    // ESTILOS DO PDF - VERSÃO FINAL
     const style = document.createElement('style');
     style.textContent = `
-      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       .products-container {
         padding: 20px !important;
         background: white !important;
-        width: 100% !important;
+        font-family: 'Poppins', Arial, sans-serif !important;
       }
 
       /* TÍTULOS */
       .products-title {
-        font-size: 24px !important;
+        font-size: 28px !important;
         text-align: center !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 10px !important;
         color: #0072BC !important;
         font-weight: bold !important;
       }
@@ -114,101 +86,138 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       .products-subtitle {
         font-size: 14px !important;
         text-align: center !important;
-        margin-bottom: 24px !important;
-        color: #666 !important;
+        margin-bottom: 30px !important;
+        color: #555 !important;
       }
 
       .category-section {
-        margin-bottom: 32px !important;
+        margin-bottom: 40px !important;
         page-break-inside: avoid !important;
       }
 
       .category-title {
-        font-size: 18px !important;
+        font-size: 20px !important;
         font-weight: bold !important;
-        margin: 16px 0 16px !important;
-        padding-left: 12px !important;
-        border-left: 4px solid #00AEEF !important;
+        margin: 20px 0 20px !important;
+        padding-left: 15px !important;
+        border-left: 5px solid #00AEEF !important;
         color: #0072BC !important;
       }
 
-      /* GRID */
+      /* GRID - Desktop */
       .product-grid {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
-        gap: 16px !important;
+        gap: 20px !important;
       }
 
       /* CARDS */
       .product-card {
         background: white !important;
-        border-radius: 12px !important;
-        padding: 12px !important;
+        border-radius: 16px !important;
+        padding: 16px !important;
         text-align: center !important;
-        border: 1px solid #e0e0e0 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        border: 1px solid #e8e8e8 !important;
         page-break-inside: avoid !important;
+        transition: none !important;
       }
 
       /* IMAGENS */
       .product-image {
         width: 100% !important;
-        max-width: 100px !important;
-        height: 100px !important;
-        margin: 0 auto !important;
+        max-width: 140px !important;
+        height: 140px !important;
+        margin: 0 auto 12px !important;
         display: block !important;
         object-fit: contain !important;
+        background: #f8f8f8 !important;
+        border-radius: 12px !important;
+        padding: 8px !important;
       }
 
-      /* NOMES */
+      /* NOMES DOS PRODUTOS - BRANCO CINZA CLARO */
       .product-name {
-        font-size: 12px !important;
+        font-size: 13px !important;
         padding: 8px 4px !important;
-        color: #333 !important;
+        color: #333333 !important;
         text-align: center !important;
-        line-height: 1.3 !important;
+        line-height: 1.4 !important;
+        font-weight: 500 !important;
+        background: transparent !important;
       }
 
       /* MOBILE */
       @media (max-width: 768px) {
         .product-grid {
           grid-template-columns: repeat(2, 1fr) !important;
-          gap: 12px !important;
+          gap: 15px !important;
         }
         .product-image {
-          height: 80px !important;
-          max-width: 80px !important;
+          max-width: 100px !important;
+          height: 100px !important;
         }
         .product-name {
-          font-size: 10px !important;
+          font-size: 11px !important;
         }
         .category-title {
-          font-size: 16px !important;
+          font-size: 18px !important;
         }
         .products-title {
-          font-size: 20px !important;
+          font-size: 22px !important;
         }
       }
 
       /* IMPRESSÃO */
       @media print {
-        body {
+        body, .products-container {
           background: white !important;
+          padding: 0 !important;
         }
         .product-grid {
           grid-template-columns: repeat(4, 1fr) !important;
+          gap: 15px !important;
         }
         .product-card {
+          box-shadow: none !important;
           border: 1px solid #ddd !important;
           page-break-inside: avoid !important;
         }
         .product-image {
-          height: 90px !important;
+          height: 120px !important;
+        }
+        .product-name {
+          color: #222 !important;
         }
       }
     `;
     cloneElement.prepend(style);
 
-    console.log('✅ Gerando PDF - Versão Corrigida');
+    // FORÇA ESTILOS INLINE NOS CARDS
+    const cards = cloneElement.querySelectorAll('.product-card');
+    cards.forEach(card => {
+      (card as HTMLElement).style.background = '#ffffff';
+      (card as HTMLElement).style.borderRadius = '16px';
+      (card as HTMLElement).style.padding = '16px';
+      (card as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+    });
+
+    const imagesElements = cloneElement.querySelectorAll('.product-image');
+    imagesElements.forEach(img => {
+      (img as HTMLElement).style.maxWidth = '140px';
+      (img as HTMLElement).style.height = '140px';
+      (img as HTMLElement).style.margin = '0 auto';
+      (img as HTMLElement).style.objectFit = 'contain';
+    });
+
+    const names = cloneElement.querySelectorAll('.product-name');
+    names.forEach(name => {
+      (name as HTMLElement).style.color = '#333333';
+      (name as HTMLElement).style.fontSize = '13px';
+      (name as HTMLElement).style.fontWeight = '500';
+    });
+
+    console.log('✅ Gerando PDF - Versão Final Estilizada');
 
     await new Promise(r => setTimeout(r, 500));
 
@@ -216,7 +225,7 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       margin: [0.3, 0.3, 0.3, 0.3],
       filename: fileName,
       image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 2, useCORS: true, logging: false },
+      html2canvas: { scale: 2.5, useCORS: true, logging: false, backgroundColor: '#ffffff' },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
