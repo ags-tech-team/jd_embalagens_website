@@ -78,22 +78,23 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
         align-items: center !important;
       }
       
-      /* Imagens - mantém proporção quadrada */
+      /* Imagens - FORÇA O ASPECTO CORRETO */
       .product-image { 
         width: 100% !important; 
         height: auto !important;
+        min-height: 80px !important;
+        max-height: 100px !important;
         aspect-ratio: 1 / 1 !important;
-        object-fit: contain !important;
-        border-radius: 6px !important;
-        background: #f5f5f5 !important;
-        padding: 4px !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        background: ${props => props.theme.colors.gray} !important;
       }
       
       .product-name { 
         font-size: 0.65rem !important; 
         padding: 0.3rem 0.1rem !important; 
         text-align: center !important; 
-        word-break: keep-all !important; 
+        word-break: break-word !important; 
         line-height: 1.2 !important; 
       }
       
@@ -101,13 +102,19 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
       @media (max-width: 768px) {
         .product-grid { 
           grid-template-columns: repeat(3, 1fr) !important; 
-          gap: 0.4rem !important;
+          gap: 0.3rem !important;
+        }
+        .product-card { 
+          padding: 0.2rem !important;
         }
         .product-image { 
+          min-height: 70px !important;
           max-height: 80px !important;
+          object-fit: cover !important;
         }
         .product-name { 
           font-size: 0.55rem !important; 
+          padding: 0.2rem 0.05rem !important;
         }
       }
       
@@ -117,8 +124,8 @@ export const PDFButton = ({ elementId, fileName = 'catalogo-embalagens.pdf' }: P
           grid-template-columns: repeat(5, 1fr) !important; 
         }
         .product-image { 
-          object-fit: contain !important;
-          max-height: 70px !important;
+          max-height: 80px !important;
+          object-fit: cover !important;
         }
       }
     `;
