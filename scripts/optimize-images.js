@@ -2,8 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const inputDir = './public/products';
-const outputDir = './public/products_optmized';
+const inputDir = './public/novasImagens';
+const outputDir = './public/products_optimized';
 
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
