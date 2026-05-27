@@ -4,24 +4,13 @@ export const HeroSlide = styled.div<{ $image: string }>`
   width: 100%;
   height: 100%;
   background-image: url(${props => props.$image});
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  background-color: ${props => props.theme.colors.background};
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-  }
 `;
+
 
 export const HeroContent = styled.div`
   text-align: center;
@@ -82,8 +71,8 @@ export const FadeBottom = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent 0%, ${props => props.theme.colors.fadeWhite} 100%);
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, ${props => props.theme.colors.background} 100%);
   z-index: 10;
   pointer-events: none;
 `;

@@ -152,20 +152,18 @@ export const ProductImage = styled.img`
 export const ProductName = styled.p`
   padding: 0.75rem 0.5rem 0.25rem;
   text-align: center;
-  font-weight: 600;
+  font-weight: 900;  
   font-size: 0.85rem;
-  color: ${props => props.theme.colors.text};
+  color: #FFFFFF;
   background: ${props => props.theme.colors.cardBg};
-  
-  /* 🔧 IMPEDE QUEBRA DE PALAVRAS NO MEIO (tanto na tela quanto no PDF) */
-  word-break: keep-all;          /* Mantém palavras inteiras (nunca quebra no meio) */
+  word-break: keep-all;
   white-space: normal;
   overflow-wrap: normal;
-  hyphens: none;                 /* Remove qualquer hifenização */
+  hyphens: none;
   
   @media (min-width: 768px) {
-    font-size: 0.9rem;
-    padding: 1rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    padding: 1rem 0.5rem 0.1rem;
   }
 `;
 

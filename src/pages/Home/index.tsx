@@ -5,6 +5,9 @@ import { CtaSection } from '../../components/Home/CtaSection';
 import { CatalogSection } from '../../components/Home/CatalogSection';
 import { WorkPreview } from '../../components/Home/WorkPreview';
 import { FaqSection } from '../../components/Home/FaqSection';
+import { PreFooter } from '../../components/PreFooter';
+import { Footer } from '../../components/Footer';
+
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -15,19 +18,16 @@ export const Home = () => {
 
   const slides = [
     {
-      title: 'Criamos sua arte...',
-      subtitle: 'Design personalizado para sua marca se destacar no mercado',
       image: '/slides/slide1.webp'
     },
     {
-      title: 'Diversas embalagens...',
-      subtitle: 'Catálogo completo com mais de 500 modelos disponíveis',
       image: '/slides/slide2.webp'
     },
     {
-      title: 'Entregamos em todo o Brasil',
-      subtitle: 'Logística eficiente para atender sua empresa onde você estiver',
       image: '/slides/slide3.webp'
+    },
+    {
+      image: '/slides/slide4.webp'
     }
   ];
 
@@ -55,7 +55,7 @@ export const Home = () => {
       <AboutSection 
         title="Sobre a JD Embalagens"
         texts={aboutTexts}
-        imageSrc="/about-image.jpg"
+        imageSrc="/about-image.webp"
         imageAlt="Embalagens personalizadas JD"
         qualityTitle="NOSSA QUALIDADE"
         qualityTexts={qualityTexts}
@@ -65,6 +65,8 @@ export const Home = () => {
       <CtaSection onButtonClick={goToProducts} />
       <CatalogSection onButtonClick={goToProducts} />
       <FaqSection />
+      <PreFooter />
+      <Footer />
     </>
   );
 };
