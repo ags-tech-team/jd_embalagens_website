@@ -4,10 +4,9 @@ export const HeroSlide = styled.div<{ $image: string }>`
   width: 100%;
   height: 100%;
   background-image: url(${props => props.$image});
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: ${props => props.theme.colors.background};
   position: relative;
 `;
 

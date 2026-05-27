@@ -119,15 +119,10 @@ export const ProductCard = styled.div`
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  padding: 1rem;
-  
-  /* Para evitar quebra de página dentro do card no PDF */
-  page-break-inside: avoid;
-  break-inside: avoid;
-  min-height: 280px;
+  padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.5rem;
   
   &:hover {
     transform: translateY(-8px);
@@ -138,7 +133,6 @@ export const ProductCard = styled.div`
 export const ProductImage = styled.img`
   width: 100%;
   height: auto;
-  max-height: 200px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 16px;
@@ -150,20 +144,26 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductName = styled.p`
-  padding: 0.75rem 0.5rem 0.25rem;
   text-align: center;
-  font-weight: 900;  
+  font-weight: 600;
   font-size: 0.85rem;
-  color: #FFFFFF;
+  color: ${props => props.theme.colors.text};
   background: ${props => props.theme.colors.cardBg};
+  padding: 0.25rem 0.25rem;
+  margin-top: 0;
   word-break: keep-all;
   white-space: normal;
   overflow-wrap: normal;
   hyphens: none;
   
   @media (min-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.25rem;
+  }
+  
+  @media (min-width: 1024px) {
     font-size: 1rem;
-    padding: 1rem 0.5rem 0.1rem;
+    padding: 0.75rem 0.25rem;
   }
 `;
 
