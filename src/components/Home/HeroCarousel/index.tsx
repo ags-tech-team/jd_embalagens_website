@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules';
-import { CarouselContainer, HeroSlide, FadeBottom } from './styles';
+import { CarouselContainer, SlideImage, FadeBottom } from './styles';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 interface HeroCarouselProps {
   slides: Array<{
     image: string;
+    alt?: string;
   }>;
 }
 
@@ -27,8 +28,14 @@ export const HeroCarousel = ({ slides }: HeroCarouselProps) => {
         style={{ width: '100%', height: '100%' }}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <HeroSlide $image={slide.image} />
+          <SwiperSlide
+            key={index}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <SlideImage
+              src={slide.image}
+              alt={slide.alt ?? `Slide ${index + 1}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
