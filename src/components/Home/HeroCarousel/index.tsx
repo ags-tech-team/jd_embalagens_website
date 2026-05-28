@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules';
-import { HeroSlide, FadeBottom } from './styles';
+import { CarouselContainer, HeroSlide, FadeBottom } from './styles';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -15,7 +15,7 @@ interface HeroCarouselProps {
 
 export const HeroCarousel = ({ slides }: HeroCarouselProps) => {
   return (
-    <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 90px)' }}>
+    <CarouselContainer>
       <Swiper
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
         effect="fade"
@@ -33,6 +33,6 @@ export const HeroCarousel = ({ slides }: HeroCarouselProps) => {
         ))}
       </Swiper>
       <FadeBottom />
-    </div>
+    </CarouselContainer>
   );
 };

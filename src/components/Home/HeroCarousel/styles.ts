@@ -1,17 +1,29 @@
 import styled from 'styled-components';
 
+export const CarouselContainer = styled.div`
+  position: relative;
+  width: 100%;
+  /* Altura automática baseada na proporção da imagem (ex: 16:9) */
+  aspect-ratio: 16 / 9;
+  
+  @media (max-width: 768px) {
+    aspect-ratio: 4 / 3; /* proporção mais quadrada no mobile para mostrar mais conteúdo */
+  }
+`;
+
 export const HeroSlide = styled.div<{ $image: string }>`
   width: 100%;
   height: 100%;
   background-image: url(${props => props.$image});
-  background-size: 100% 100%;
+  background-size: contain; /* a imagem inteira aparece, sem cortes */
   background-position: center;
   background-repeat: no-repeat;
+  background-color: ${props => props.theme.colors.background}; /* cor de fundo para as bordas */
   position: relative;
 `;
 
-
 export const HeroContent = styled.div`
+  /* se você não usa conteúdo sobreposto, pode ignorar; se usa, mantém */
   text-align: center;
   color: #FFFFFF !important;
   max-width: 90%;
