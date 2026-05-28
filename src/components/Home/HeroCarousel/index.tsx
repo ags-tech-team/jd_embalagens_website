@@ -22,7 +22,7 @@ export const HeroCarousel = ({ slides }: HeroCarouselProps) => {
         effect="fade"
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation={true}
+        navigation={false}
         loop={true}
         speed={1500}
         style={{ width: '100%', height: '100%' }}
