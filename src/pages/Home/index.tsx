@@ -21,6 +21,9 @@ export const Home = () => {
       image: '/slides/slide1.webp'
     },
     {
+      image: '/slides/slide5.webp'
+    },
+    {
       image: '/slides/slide2.webp'
     },
     {
