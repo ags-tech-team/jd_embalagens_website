@@ -41,7 +41,7 @@ export const Home = () => {
   ];
 
   const qualityTexts = [
-    'Na <strong>JD Color Copo</strong>, cada produto é desenvolvido com atenção aos mínimos detalhes, garantindo perfeição e excelência. Selecionamos criteriosamente os melhores materiais para produzir embalagens que vão além da proteção, valorizando e destacando seu produto no mercado.',
+    'Na <strong>JD Color Copo & Pack Clean</strong>, cada produto é desenvolvido com atenção aos mínimos detalhes, garantindo perfeição e excelência. Selecionamos criteriosamente os melhores materiais para produzir embalagens que vão além da proteção, valorizando e destacando seu produto no mercado.',
     'Nossas impressões utilizam <strong>tintas de alto padrão</strong>, especialmente formuladas para entregar cores vibrantes, resistência e durabilidade excepcionais. Mantemos rigorosos processos de controle de qualidade em todas as etapas produtivas, assegurando acabamento impecável e fortalecendo a identidade visual da sua marca.',
     'Unimos <strong>criatividade, inovação tecnológica e rigoroso controle de qualidade</strong> para desenvolver soluções que encantam clientes e superam as expectativas mais exigentes do mercado de embalagens personalizadas.'
   ];
