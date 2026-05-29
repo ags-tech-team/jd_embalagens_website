@@ -56,7 +56,7 @@ export const Home = () => {
     <>
       <HeroCarousel slides={slides} />
       <AboutSection 
-        title="Sobre a JD Embalagens"
+        title="Sobre a JD Color Copo & Pack Clean"
         texts={aboutTexts}
         imageSrc="/about-image.webp"
         imageAlt="Embalagens personalizadas JD"
