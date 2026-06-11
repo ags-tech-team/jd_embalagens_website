@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { 
-  ProductsContainer, 
-  ProductsTitle, 
+import { Helmet } from 'react-helmet-async';
+import {
+  ProductsContainer,
+  ProductsTitle,
   ProductsSubtitle,
   CategorySection,
   CategoryTitle,
@@ -47,11 +48,23 @@ export const Products = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Catálogo de Embalagens | JD Color Copo & Pack Clean</title>
+
+        <meta
+          name="description"
+          content="Confira o catálogo da JD Color Copo & Pack Clean com copos personalizados, potes, sacolas, caixas, isopor, produtos de limpeza, brindes e embalagens para empresas."
+        />
+
+        <link rel="canonical" href="https://www.jdcolorcopo.com.br/produtos" />
+      </Helmet>
+
       <ProductsWrapper>
         <ProductsContainer>
           <ProductsTitle className="products-title">
             <span>📦</span> CATÁLOGO EMBALAGENS <span>📦</span>
           </ProductsTitle>
+
           <ProductsSubtitle>
             Encontre a embalagem ideal para o seu negócio
           </ProductsSubtitle>
@@ -61,18 +74,21 @@ export const Products = () => {
               <CategoryTitle className="category-title">
                 <span>{category.icon}</span> {category.title}
               </CategoryTitle>
-              
+
               <ProductGrid>
                 {category.items.map((product) => (
                   <ProductCard key={product.id} className="product-card" onClick={() => handleProductClick(product)}>
-                    <ProductImage 
+                    <ProductImage
                       className="product-image"
-                      src={product.image} 
-                      alt={product.name} 
-                      fetchPriority="high" 
-                      decoding="sync" 
+                      src={product.image}
+                      alt={product.name}
+                      fetchPriority="high"
+                      decoding="sync"
                     />
-                    <ProductName className="product-name">{product.name}</ProductName>
+
+                    <ProductName className="product-name">
+                      {product.name}
+                    </ProductName>
                   </ProductCard>
                 ))}
               </ProductGrid>
@@ -80,14 +96,13 @@ export const Products = () => {
           ))}
         </ProductsContainer>
       </ProductsWrapper>
-      
-      {/* Agora passamos categories diretamente, sem elementId */}
-      <PDFButton 
-        categories={categories} 
-        fileName="catalogo-jd-color-copo-&-pack-clean.pdf" 
+
+      <PDFButton
+        categories={categories}
+        fileName="catalogo-jd-color-copo-&-pack-clean.pdf"
       />
-      
-      <ProductModal 
+
+      <ProductModal
         isOpen={modalOpen}
         onClose={closeModal}
         product={selectedProduct}

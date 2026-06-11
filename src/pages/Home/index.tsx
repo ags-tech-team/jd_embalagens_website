@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { HeroCarousel } from '../../components/Home/HeroCarousel';
 import { AboutSection } from '../../components/Home/AboutSection';
@@ -8,7 +9,6 @@ import { FaqSection } from '../../components/Home/FaqSection';
 import { PreFooter } from '../../components/PreFooter';
 import { Footer } from '../../components/Footer';
 
-
 export const Home = () => {
   const navigate = useNavigate();
 
@@ -17,21 +17,11 @@ export const Home = () => {
   };
 
   const slides = [
-    {
-      image: '/slides/slide1.webp'
-    },
-    {
-      image: '/slides/slide5.webp'
-    },
-    {
-      image: '/slides/slide2.webp'
-    },
-    {
-      image: '/slides/slide3.webp'
-    },
-    {
-      image: '/slides/slide4.webp'
-    }
+    { image: '/slides/slide1.webp' },
+    { image: '/slides/slide5.webp' },
+    { image: '/slides/slide2.webp' },
+    { image: '/slides/slide3.webp' },
+    { image: '/slides/slide4.webp' }
   ];
 
   const aboutTexts = [
@@ -47,15 +37,27 @@ export const Home = () => {
   ];
 
   const stats = [
-    { number: "150+", label: "CLIENTES SATISFEITOS" },
-    { number: "500+", label: "MODELOS DISPONÍVEIS" },
-    { number: "100%", label: "QUALIDADE GARANTIDA" }
+    { number: '150+', label: 'CLIENTES SATISFEITOS' },
+    { number: '500+', label: 'MODELOS DISPONÍVEIS' },
+    { number: '100%', label: 'QUALIDADE GARANTIDA' }
   ];
 
   return (
     <>
+      <Helmet>
+        <title>JD Color Copo & Pack Clean | Copos e Embalagens Personalizadas</title>
+
+        <meta
+          name="description"
+          content="Copos personalizados, embalagens, potes e soluções para cafeterias, eventos, restaurantes, festas e empresas. Conheça a JD Color Copo & Pack Clean."
+        />
+
+        <link rel="canonical" href="https://www.jdcolorcopo.com.br/" />
+      </Helmet>
+
       <HeroCarousel slides={slides} />
-      <AboutSection 
+
+      <AboutSection
         title="Sobre a JD Color Copo & Pack Clean"
         texts={aboutTexts}
         imageSrc="/about-image.webp"
@@ -64,6 +66,7 @@ export const Home = () => {
         qualityTexts={qualityTexts}
         stats={stats}
       />
+
       <WorkPreview />
       <CtaSection onButtonClick={goToProducts} />
       <CatalogSection onButtonClick={goToProducts} />
