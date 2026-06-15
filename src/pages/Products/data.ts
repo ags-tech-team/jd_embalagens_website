@@ -11,7 +11,8 @@ export const productsData = {
       { id: 6, name: "Copo de Isopor", image: "products_optimized/copoIsopor.webp" },
       { id: 7, name: "Copo Long Drink", image: "products_optimized/copoLongDrink.webp" },
       { id: 8, name: "Copo Eco", image: "products_optimized/copoEco.webp" },
-      { id: 9, name: "Copo Twister", image: "products_optimized/copoTwister.webp" }
+      { id: 9, name: "Copo Twister", image: "products_optimized/copoTwister.webp" },
+      { id: 136, name: "Copo com Borda Colorida", image: "products_optimized/copoBordaColorida.webp" }
     ]
   },
   potes: {
@@ -32,7 +33,8 @@ export const productsData = {
       { id: 16, name: "Saco de Delivery", image: "products_optimized/sacoDelivery.webp" },
       { id: 17, name: "Saco para Pães", image: "products_optimized/sacoPaes.webp" },
       { id: 20, name: "Sacola de Papel", image: "products_optimized/sacolaPapel.webp" },
-      { id: 33, name: "Sacola de Boca Palhaço", image: "products_optimized/sacolabocapalhaco.webp" }
+      { id: 33, name: "Sacola de Boca Palhaço", image: "products_optimized/sacolabocapalhaco.webp" },
+      { id: 137, name: "Sacola Forte", image: "products_optimized/sacolaForte.webp" }
     ]
   },
   caixas: {
@@ -41,7 +43,8 @@ export const productsData = {
     items: [
       { id: 18, name: "Caixa de Pizza", image: "products_optimized/caixaPizza.webp" },
       { id: 19, name: "Caixa de Salgado", image: "products_optimized/caixaSalgado.webp" },
-      { id: 32, name: "Caixa PET para Salgados", image: "products_optimized/embalagempet.webp" }
+      { id: 32, name: "Caixa PET para Salgados", image: "products_optimized/embalagempet.webp" },
+      { id: 135, name: "Embalagem PET Personalizada", image: "products_optimized/embalagemPetPersonalizada.webp" }
     ]
   },
   isopor: {
@@ -50,7 +53,9 @@ export const productsData = {
     items: [
       { id: 24, name: "Marmita de Isopor", image: "products_optimized/marmitaIsopor.webp" },
       { id: 34, name: "Embalagem para Hambúrguer (Quadrada)", image: "products_optimized/hamburguerquadrada.webp" },
-      { id: 35, name: "Embalagem para Hambúrguer (Redonda)", image: "products_optimized/hamburguerredonda.webp" }
+      { id: 35, name: "Embalagem para Hambúrguer (Redonda)", image: "products_optimized/hamburguerredonda.webp" },
+      { id: 36, name: "Marmita de Isopor Personalizada", image: "products_optimized/marmitaPersonalizada.webp" },
+      { id: 37, name: "Hamburgueira de Isopor Personalizada", image: "products_optimized/hamburgueiraPersonalizada.webp" }
     ]
   },
   outros: {
