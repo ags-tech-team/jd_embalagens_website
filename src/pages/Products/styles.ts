@@ -57,6 +57,152 @@ export const ProductsSubtitle = styled.p`
   }
 `;
 
+export const FilterContainer = styled.div`
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const FilterButtonsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    gap: 1rem;
+  }
+`;
+
+export const FilterButton = styled.button<{ active: boolean }>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid ${props => props.active 
+    ? props.theme.colors.vibrant 
+    : props.theme.colors.border
+  };
+  border-radius: 50px;
+  background: ${props => props.active 
+    ? props.theme.colors.vibrant 
+    : props.theme.colors.cardBg
+  };
+  color: ${props => props.active 
+    ? props.theme.colors.white 
+    : props.theme.colors.text
+  };
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: ${props => props.active 
+    ? `0 4px 15px rgba(0, 174, 239, 0.3)` 
+    : `0 2px 8px rgba(0, 0, 0, 0.06)`
+  };
+  
+  span {
+    font-size: 1.1rem;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 174, 239, 0.2);
+    border-color: ${props => props.active 
+      ? props.theme.colors.vibrant 
+      : props.theme.colors.royal
+    };
+    background: ${props => props.active 
+      ? props.theme.colors.vibrant 
+      : props.theme.mode === 'dark' 
+        ? props.theme.colors.gray 
+        : '#f0f8ff'
+    };
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.8rem;
+    gap: 0.3rem;
+    
+    span {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+`;
+
+export const FilterBadge = styled.span`
+  background: rgba(255, 255, 255, 0.3);
+  color: ${props => props.theme.colors.white};
+  border-radius: 50%;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 0.2rem;
+  
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.4rem;
+  }
+`;
+
+export const ClearFilterButton = styled.button`
+  background: transparent;
+  border: none;
+  color: ${props => props.theme.colors.royal};
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  
+  &:hover {
+    color: ${props => props.theme.colors.vibrant};
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+export const FilterInfo = styled.div`
+  text-align: center;
+  margin-bottom: 2rem;
+  color: ${props => props.theme.colors.text};
+  font-size: 0.95rem;
+  opacity: 0.8;
+  
+  strong {
+    color: ${props => props.theme.colors.royal};
+    font-weight: 700;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
+`;
+
 export const CategorySection = styled.div`
   margin-bottom: 4rem;
   
