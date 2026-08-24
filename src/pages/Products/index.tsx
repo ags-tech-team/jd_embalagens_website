@@ -21,6 +21,7 @@ import {
 import { productsData } from './data';
 import { ProductModal } from '../../components/Products/ProductModal';
 import { PDFButton } from '../../components/PDFButton';
+import { BrindesTable } from '../../components/Products/BrindesTable';
 
 export const Products = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -41,10 +42,9 @@ export const Products = () => {
     setSelectedProduct(null);
   };
 
-  // ORDEM ALTERADA: Brindes agora vem depois de Copos
   const categories = [
     { key: 'copos', title: productsData.copos.title, icon: productsData.copos.icon, items: productsData.copos.items },
-    { key: 'brindes', title: productsData.brindes.title, icon: productsData.brindes.icon, items: productsData.brindes.items }, // <- Brindes aqui
+    { key: 'brindes', title: productsData.brindes.title, icon: productsData.brindes.icon, items: productsData.brindes.items, tableItems: productsData.brindes.tableItems },
     { key: 'potes', title: productsData.potes.title, icon: productsData.potes.icon, items: productsData.potes.items },
     { key: 'sacolas', title: productsData.sacolas.title, icon: productsData.sacolas.icon, items: productsData.sacolas.items },
     { key: 'sacosPapel', title: productsData.sacosPapel.title, icon: productsData.sacosPapel.icon, items: productsData.sacosPapel.items },
@@ -145,6 +145,11 @@ export const Products = () => {
                   </ProductCard>
                 ))}
               </ProductGrid>
+
+              {/* Se for a categoria brindes e existir tableItems, exibe a tabela */}
+              {category.key === 'brindes' && category.tableItems && (
+                <BrindesTable items={category.tableItems} />
+              )}
             </CategorySection>
           ))}
         </ProductsContainer>
