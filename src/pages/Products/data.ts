@@ -31,7 +31,13 @@ export const productsData = {
     items: [
       { id: 20, name: "Sacola de Papel", image: "products_optimized/sacolaPapel.webp" },
       { id: 33, name: "Sacola de Boca Palhaço", image: "products_optimized/sacolabocapalhaco.webp" },
-      { id: 137, name: "Sacola Forte", image: "products_optimized/sacolaForte.webp" }
+      { id: 137, name: "Sacola Forte", image: "products_optimized/sacolaForte.webp" },
+      { id: 138, name: "Sacola Verde 30x40",            image: "products_optimized/sacolaVerde.webp" },
+      { id: 139, name: "Sacola Creme 30x40",            image: "products_optimized/sacolaCreme.webp" },
+      { id: 140, name: "Sacola Branca 30x40",           image: "products_optimized/sacolaBranca.webp" },
+      { id: 141, name: "Sacola Amarela 30x40",          image: "products_optimized/sacolaAmarela.webp" },
+      { id: 142, name: "Sacola Azul 30x40",             image: "products_optimized/sacolaAzul.webp" },
+      { id: 143, name: "Sacola Transparente 30x40",     image: "products_optimized/sacolaTransparente.webp" }
     ]
   },
   sacosPapel: {
@@ -82,6 +88,21 @@ export const productsData = {
       { id: 26, name: "Saco de Lixo", image: "products_optimized/sacoLixo.webp" },
       { id: 27, name: "Papel Higiênico", image: "products_optimized/papelHigienico.webp" },
       { id: 28, name: "Papel Toalha", image: "products_optimized/roloPapelToalha.webp" }
+    ]
+  },
+   pack: {
+    title: "JD Pack",
+    icon: "🧴",
+    items: [
+      { id: 200, name: "Saco de Carvão 5kg", image: "products_optimized/sacoCarvao5kg.webp" },
+      { id: 201, name: "Estojo de Guardanapo", image: "products_optimized/estojoGuardanapo.webp" },
+      { id: 202, name: "Sacola de Papel para Hamburguer", image: "products_optimized/sacolaPapelHamburguer.webp" },
+      { id: 203, name: "Sacola em Off-Set", image: "products_optimized/sacolaOffset.webp" },
+      { id: 204, name: "Caixa para Hot Dog personalizada", image: "products_optimized/caixaHotDog.webp" },
+      { id: 205, name: "Caixa de Pizza Personalizada", image: "products_optimized/caixaPizzaPersonalizada.webp" },
+      { id: 206, name: "Embalagem Delivery Personalizada", image: "products_optimized/sacolaDeliveryPersonalizada.webp" },
+      { id: 207, name: "Caixa para Hambúrguer Personalizada", image: "products_optimized/caixaHamburguerPersonalizada.webp" },
+      { id: 208, name: "Caixa com Alça", image: "products_optimized/caixaPizzaAlca.webp" },
     ]
   },
   brindes: {

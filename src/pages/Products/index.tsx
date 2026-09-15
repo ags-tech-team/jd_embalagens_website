@@ -43,15 +43,16 @@ export const Products = () => {
   };
 
   const categories = [
-    { key: 'copos', title: productsData.copos.title, icon: productsData.copos.icon, items: productsData.copos.items },
-    { key: 'brindes', title: productsData.brindes.title, icon: productsData.brindes.icon, items: productsData.brindes.items, tableItems: productsData.brindes.tableItems },
-    { key: 'potes', title: productsData.potes.title, icon: productsData.potes.icon, items: productsData.potes.items },
-    { key: 'sacolas', title: productsData.sacolas.title, icon: productsData.sacolas.icon, items: productsData.sacolas.items },
-    { key: 'sacosPapel', title: productsData.sacosPapel.title, icon: productsData.sacosPapel.icon, items: productsData.sacosPapel.items },
-    { key: 'caixas', title: productsData.caixas.title, icon: productsData.caixas.icon, items: productsData.caixas.items },
-    { key: 'isopor', title: productsData.isopor.title, icon: productsData.isopor.icon, items: productsData.isopor.items },
-    { key: 'limpeza', title: productsData.limpeza.title, icon: productsData.limpeza.icon, items: productsData.limpeza.items },
-    { key: 'outros', title: productsData.outros.title, icon: productsData.outros.icon, items: productsData.outros.items }
+    { key: 'copos',     title: productsData.copos.title,     icon: productsData.copos.icon,     items: productsData.copos.items },
+    { key: 'brindes',   title: productsData.brindes.title,   icon: productsData.brindes.icon,   items: productsData.brindes.items, tableItems: productsData.brindes.tableItems },
+    { key: 'potes',     title: productsData.potes.title,     icon: productsData.potes.icon,     items: productsData.potes.items },
+    { key: 'sacolas',   title: productsData.sacolas.title,   icon: productsData.sacolas.icon,   items: productsData.sacolas.items },
+    { key: 'sacosPapel',title: productsData.sacosPapel.title,icon: productsData.sacosPapel.icon,items: productsData.sacosPapel.items },
+    { key: 'caixas',    title: productsData.caixas.title,    icon: productsData.caixas.icon,    items: productsData.caixas.items },
+    { key: 'isopor',    title: productsData.isopor.title,    icon: productsData.isopor.icon,    items: productsData.isopor.items },
+    { key: 'limpeza',   title: productsData.limpeza.title,   icon: productsData.limpeza.icon,   items: productsData.limpeza.items },
+    { key: 'pack',      title: productsData.pack.title,      icon: productsData.pack.icon,      items: productsData.pack.items }, // 🆕
+    { key: 'outros',    title: productsData.outros.title,    icon: productsData.outros.icon,    items: productsData.outros.items }
   ];
 
   const handleFilterClick = (categoryKey: string) => {
