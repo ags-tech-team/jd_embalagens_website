@@ -56,7 +56,12 @@ export const productsData = {
       { id: 18, name: "Caixa de Pizza", image: "products_optimized/caixaPizza.webp" },
       { id: 19, name: "Caixa de Salgado", image: "products_optimized/caixaSalgado.webp" },
       { id: 32, name: "Caixa PET para Salgados", image: "products_optimized/embalagempet.webp" },
-      { id: 135, name: "Embalagem PET Personalizada", image: "products_optimized/embalagemPetPersonalizada.webp" }
+      { id: 135, name: "Embalagem PET Personalizada", image: "products_optimized/embalagemPetPersonalizada.webp" },
+      { id: 204, name: "Caixa para Hot Dog personalizada", image: "products_optimized/caixaHotDog.webp" },
+      { id: 205, name: "Caixa de Pizza Personalizada", image: "products_optimized/caixaPizzaPersonalizada.webp" },
+      { id: 206, name: "Embalagem Delivery Personalizada", image: "products_optimized/sacolaDeliveryPersonalizada.webp" },
+      { id: 207, name: "Caixa para Hambúrguer Personalizada", image: "products_optimized/caixaHamburguerPersonalizada.webp" },
+      { id: 208, name: "Caixa com Alça", image: "products_optimized/caixaPizzaAlca.webp" },
     ]
   },
   isopor: {
@@ -98,11 +103,6 @@ export const productsData = {
       { id: 201, name: "Estojo de Guardanapo", image: "products_optimized/estojoGuardanapo.webp" },
       { id: 202, name: "Sacola de Papel para Hamburguer", image: "products_optimized/sacolaPapelHamburguer.webp" },
       { id: 203, name: "Sacola em Off-Set", image: "products_optimized/sacolaOffset.webp" },
-      { id: 204, name: "Caixa para Hot Dog personalizada", image: "products_optimized/caixaHotDog.webp" },
-      { id: 205, name: "Caixa de Pizza Personalizada", image: "products_optimized/caixaPizzaPersonalizada.webp" },
-      { id: 206, name: "Embalagem Delivery Personalizada", image: "products_optimized/sacolaDeliveryPersonalizada.webp" },
-      { id: 207, name: "Caixa para Hambúrguer Personalizada", image: "products_optimized/caixaHamburguerPersonalizada.webp" },
-      { id: 208, name: "Caixa com Alça", image: "products_optimized/caixaPizzaAlca.webp" },
     ]
   },
   brindes: {
