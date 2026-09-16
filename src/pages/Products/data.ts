@@ -100,7 +100,7 @@ export const productsData = {
     title: "JD Pack",
     icon: "🧴",
     items: [
-      { id: 200, name: "Saco de Carvão 5kg", image: "products_optimized/sacoCarvao5kg.webp" },
+      { id: 200, name: "Saco de Carvão 5kg com sua logo", image: "products_optimized/sacoCarvao5kg.webp" },
       { id: 201, name: "Estojo de Guardanapo com sua logo", image: "products_optimized/estojoGuardanapo.webp" },
     ]
   },
