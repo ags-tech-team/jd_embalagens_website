@@ -46,7 +46,8 @@ export const productsData = {
     items: [
       { id: 15, name: "Saco pra Lanche", image: "products_optimized/sacoLanche.webp" },
       { id: 16, name: "Saco de Delivery", image: "products_optimized/sacoDelivery.webp" },
-      { id: 17, name: "Saco para Pães", image: "products_optimized/sacoPaes.webp" }
+      { id: 17, name: "Saco para Pães", image: "products_optimized/sacoPaes.webp" },
+      { id: 202, name: "Sacola de Papel para Hamburguer com sua logo", image: "products_optimized/sacolaPapelHamburguer.webp" },
     ]
   },
   caixas: {
@@ -57,11 +58,11 @@ export const productsData = {
       { id: 19, name: "Caixa de Salgado", image: "products_optimized/caixaSalgado.webp" },
       { id: 32, name: "Caixa PET para Salgados", image: "products_optimized/embalagempet.webp" },
       { id: 135, name: "Embalagem PET Personalizada", image: "products_optimized/embalagemPetPersonalizada.webp" },
-      { id: 204, name: "Caixa para Hot Dog personalizada", image: "products_optimized/caixaHotDog.webp" },
-      { id: 205, name: "Caixa de Pizza Personalizada", image: "products_optimized/caixaPizzaPersonalizada.webp" },
-      { id: 206, name: "Embalagem Delivery Personalizada", image: "products_optimized/sacolaDeliveryPersonalizada.webp" },
-      { id: 207, name: "Caixa para Hambúrguer Personalizada", image: "products_optimized/caixaHamburguerPersonalizada.webp" },
-      { id: 208, name: "Caixa com Alça", image: "products_optimized/caixaPizzaAlca.webp" },
+      { id: 204, name: "Caixa para Hot Dog personalizada com sua logo", image: "products_optimized/caixaHotDog.webp" },
+      { id: 205, name: "Caixa de Pizza Personalizada com sua logo", image: "products_optimized/caixaPizzaPersonalizada.webp" },
+      { id: 206, name: "Embalagem Delivery Personalizada com sua logo", image: "products_optimized/sacolaDeliveryPersonalizada.webp" },
+      { id: 207, name: "Caixa para Hambúrguer Personalizada com sua logo", image: "products_optimized/caixaHamburguerPersonalizada.webp" },
+      { id: 208, name: "Caixa com Alça com sua logo", image: "products_optimized/caixaPizzaAlca.webp" },
     ]
   },
   isopor: {
@@ -100,9 +101,7 @@ export const productsData = {
     icon: "🧴",
     items: [
       { id: 200, name: "Saco de Carvão 5kg", image: "products_optimized/sacoCarvao5kg.webp" },
-      { id: 201, name: "Estojo de Guardanapo", image: "products_optimized/estojoGuardanapo.webp" },
-      { id: 202, name: "Sacola de Papel para Hamburguer", image: "products_optimized/sacolaPapelHamburguer.webp" },
-      { id: 203, name: "Sacola em Off-Set", image: "products_optimized/sacolaOffset.webp" },
+      { id: 201, name: "Estojo de Guardanapo com sua logo", image: "products_optimized/estojoGuardanapo.webp" },
     ]
   },
   brindes: {
