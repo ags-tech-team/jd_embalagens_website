@@ -316,3 +316,44 @@ export const ProductName = styled.p`
 export const ProductsWrapper = styled.div`
   background: ${props => props.theme.colors.background};
 `;
+
+export const FullCatalogBanner = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff7a00 0%, #ffb100 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+
+  span.icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255, 122, 0, 0.5);
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+    margin-bottom: 22px;
+  }
+`;

@@ -16,7 +16,8 @@ import {
   FilterButtonsWrapper,
   FilterBadge,
   ClearFilterButton,
-  FilterInfo
+  FilterInfo,
+  FullCatalogBanner // 🆕
 } from './styles';
 import { productsData } from './data';
 import { ProductModal } from '../../components/Products/ProductModal';
@@ -94,6 +95,17 @@ export const Products = () => {
           <ProductsSubtitle>
             Encontre a embalagem ideal para o seu negócio
           </ProductsSubtitle>
+
+          <FullCatalogBanner
+            href="https://jdcolorcopoepackclean.pedidook.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver catálogo completo no site Pedido OK"
+          >
+            <span className="icon">🛒</span>
+            Quer ver o catálogo completo? Clique aqui!
+            <span className="icon">→</span>
+          </FullCatalogBanner>
 
           <FilterContainer>
             <FilterButtonsWrapper>
