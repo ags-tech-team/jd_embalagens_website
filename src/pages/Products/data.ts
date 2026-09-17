@@ -32,12 +32,12 @@ export const productsData = {
       { id: 20, name: "Sacola de Papel", image: "products_optimized/sacolaPapel.webp" },
       { id: 33, name: "Sacola de Boca Palhaço", image: "products_optimized/sacolabocapalhaco.webp" },
       { id: 137, name: "Sacola Forte", image: "products_optimized/sacolaForte.webp" },
-      { id: 138, name: "Sacola Verde 30x40",            image: "products_optimized/sacolaVerde.webp" },
-      { id: 139, name: "Sacola Creme 30x40",            image: "products_optimized/sacolaCreme.webp" },
-      { id: 140, name: "Sacola Branca 30x40",           image: "products_optimized/sacolaBranca.webp" },
-      { id: 141, name: "Sacola Amarela 30x40",          image: "products_optimized/sacolaAmarela.webp" },
-      { id: 142, name: "Sacola Azul 30x40",             image: "products_optimized/sacolaAzul.webp" },
-      { id: 143, name: "Sacola Transparente 30x40",     image: "products_optimized/sacolaTransparente.webp" }
+      { id: 138, name: "Sacola Verde 30x40 40x50 47x57",            image: "products_optimized/sacolaVerde.webp" },
+      { id: 139, name: "Sacola Creme 30x40 38x48 47x57",            image: "products_optimized/sacolaCreme.webp" },
+      { id: 140, name: "Sacola Branca 30x40 38x48 48x58",           image: "products_optimized/sacolaBranca.webp" },
+      { id: 141, name: "Sacola Amarela 30x40 38x48",          image: "products_optimized/sacolaAmarela.webp" },
+      { id: 142, name: "Sacola Azul 30x40 38x48",             image: "products_optimized/sacolaAzul.webp" },
+      { id: 143, name: "Sacola Transparente 38x48",     image: "products_optimized/sacolaTransparente.webp" }
     ]
   },
   sacosPapel: {
@@ -56,7 +56,7 @@ export const productsData = {
     items: [
       { id: 18, name: "Caixa de Pizza", image: "products_optimized/caixaPizza.webp" },
       { id: 19, name: "Caixa de Salgado", image: "products_optimized/caixaSalgado.webp" },
-      { id: 32, name: "Caixa PET para Salgados", image: "products_optimized/embalagempet.webp" },
+      { id: 32, name: "Caixa PET para Bolo", image: "products_optimized/embalagempet.webp" },
       { id: 135, name: "Embalagem PET Personalizada", image: "products_optimized/embalagemPetPersonalizada.webp" },
       { id: 204, name: "Caixa para Hot Dog personalizada com sua logo", image: "products_optimized/caixaHotDog.webp" },
       { id: 205, name: "Caixa de Pizza Personalizada com sua logo", image: "products_optimized/caixaPizzaPersonalizada.webp" },
@@ -81,7 +81,7 @@ export const productsData = {
     icon: "📦",
     items: [
       { id: 22, name: "Etiqueta de Preço", image: "products_optimized/EtiquetaPreço.webp" },
-      { id: 36, name: "Etiquetas de Balança", image: "products_optimized/rotulodebalanca.webp" },
+      { id: 36, name: "Etiquetas de Balança 40x40 60x40 60x30", image: "products_optimized/rotulodebalanca.webp" },
       { id: 37, name: "Rótulos", image: "products_optimized/rotulo.webp" },
       { id: 38, name: "Lacres", image: "products_optimized/lacre.webp" }
     ]
@@ -100,8 +100,8 @@ export const productsData = {
     title: "JD Pack",
     icon: "🧴",
     items: [
-      { id: 200, name: "Saco de Carvão 5kg com sua logo", image: "products_optimized/sacoCarvao5kg.webp" },
-      { id: 201, name: "Estojo de Guardanapo com sua logo", image: "products_optimized/estojoGuardanapo.webp" },
+      { id: 200, name: "Saco de Carvão 3kg e 5kg com sua logo", image: "products_optimized/sacoCarvao5kg.webp" },
+      { id: 201, name: "Guardanapo sachê com sua logo", image: "products_optimized/estojoGuardanapo.webp" },
     ]
   },
   brindes: {
