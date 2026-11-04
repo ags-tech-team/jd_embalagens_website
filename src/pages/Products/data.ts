@@ -12,7 +12,9 @@ export const productsData = {
       { id: 7, name: "Copo Long Drink", image: "products_optimized/copoLongDrink.webp" },
       { id: 8, name: "Copo Eco", image: "products_optimized/copoEco.webp" },
       { id: 9, name: "Copo Twister", image: "products_optimized/copoTwister.webp" },
-      { id: 136, name: "Copo com Borda Colorida", image: "products_optimized/copoBordaColorida.webp" }
+      { id: 136, name: "Copo com Borda Colorida", image: "products_optimized/copoBordaColorida.webp" },
+      { id: 209, name: "Copo com Borda Pintada + Degradê 100ml e 200ml", image: "products_optimized/copos_borda_pintada_degrade.webp" },
+      { id: 210, name: "Copo Neon Personalizado", image: "products_optimized/copos_neon.webp" }
     ]
   },
   potes: {
@@ -37,7 +39,9 @@ export const productsData = {
       { id: 140, name: "Sacola Branca 30x40 38x48 48x58",           image: "products_optimized/sacolaBranca.webp" },
       { id: 141, name: "Sacola Amarela 30x40 38x48",          image: "products_optimized/sacolaAmarela.webp" },
       { id: 142, name: "Sacola Azul 30x40 38x48",             image: "products_optimized/sacolaAzul.webp" },
-      { id: 143, name: "Sacola Transparente 38x48",     image: "products_optimized/sacolaTransparente.webp" }
+      { id: 143, name: "Sacola Transparente 38x48",     image: "products_optimized/sacolaTransparente.webp" },
+      { id: 211, name: "Sacola Boca Palhaço Personalizada", image: "products_optimized/sacola_boca_palhaço.webp" },
+      { id: 212, name: "Sacola Alça Camiseta Personalizada", image: "products_optimized/sacolas_alca_camiseta.webp" }
     ]
   },
   sacosPapel: {
@@ -104,6 +108,17 @@ export const productsData = {
       { id: 201, name: "Guardanapo sachê com sua logo", image: "products_optimized/estojoGuardanapo.webp" },
     ]
   },
+  kitsPresentes: {
+    title: "JD Kits Presentes",
+    icon: "🎁",
+    items: [
+      { id: 219, name: "Kit Café Personalizado", image: "products_optimized/kit_cafe.webp" },
+      { id: 220, name: "Kit Cinema Personalizado", image: "products_optimized/kit_cinema.webp" },
+      { id: 221, name: "Kit Presente Especial Personalizado", image: "products_optimized/kit_presente_especial.webp" },
+      { id: 222, name: "Kit Cerveja Personalizado", image: "products_optimized/kit_cerveja.webp" },
+      { id: 223, name: "Cesta de Natal e Ano Novo Personalizada", image: "products_optimized/cesta_natal.webp" }
+    ]
+  },
   brindes: {
     title: "JD Brindes em Geral",
     icon: "🎁",
@@ -149,7 +164,13 @@ export const productsData = {
       { id: 132, name: "Balde de Pipoca Ecológico", image: "products_optimized/baldePipocaEco.webp", capacity: "1,8 L" },
       { id: 133, name: "Tampas Flip e Bucks", image: "products_optimized/tampasFlipeBucks.webp", capacity: "" },
       { id: 134, name: "Tirante e Suporte", image: "products_optimized/tiranteEsuporte.webp", capacity: "" },
-      { id: 39, name: "Canecas Personalizadas", image: "products_optimized/canecasPersonalizadas.webp", capacity: "" }
+      { id: 39, name: "Canecas Personalizadas", image: "products_optimized/canecasPersonalizadas.webp", capacity: "" },
+      { id: 213, name: "Lixeira para Carro Personalizada", image: "products_optimized/lixocar_personalizado.webp", capacity: "" },
+      { id: 214, name: "Kit Aniversário Personalizado", image: "products_optimized/kit_aniversario.webp", capacity: "" },
+      { id: 215, name: "Canecas Degradê com Logo", image: "products_optimized/canecas_degrade_com_logo.webp", capacity: "300 ml e 430 ml" },
+      { id: 216, name: "Chinelos Personalizados", image: "products_optimized/chinelas_personalizadas.webp", capacity: "" },
+      { id: 217, name: "Camiseta Personalizada com Logo", image: "products_optimized/camiseta_personalizada.webp", capacity: "" },
+      { id: 218, name: "Copos Personalizados Dia das Crianças", image: "products_optimized/copos_dia_das_criancas.webp", capacity: "" },
     ],
     // Lista específica para a tabela de brindes
     tableItems: [

@@ -53,7 +53,8 @@ export const Products = () => {
     { key: 'isopor',    title: productsData.isopor.title,    icon: productsData.isopor.icon,    items: productsData.isopor.items },
     { key: 'limpeza',   title: productsData.limpeza.title,   icon: productsData.limpeza.icon,   items: productsData.limpeza.items },
     { key: 'pack',      title: productsData.pack.title,      icon: productsData.pack.icon,      items: productsData.pack.items }, // 🆕
-    { key: 'outros',    title: productsData.outros.title,    icon: productsData.outros.icon,    items: productsData.outros.items }
+    { key: 'outros',    title: productsData.outros.title,    icon: productsData.outros.icon,    items: productsData.outros.items },
+    { key: 'kitsPresentes', title: productsData.kitsPresentes.title, icon: productsData.kitsPresentes.icon, items: productsData.kitsPresentes.items },
   ];
 
   const handleFilterClick = (categoryKey: string) => {
