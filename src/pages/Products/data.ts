@@ -13,7 +13,7 @@ export const productsData = {
       { id: 8, name: "Copo Eco", image: "products_optimized/copoEco.webp" },
       { id: 9, name: "Copo Twister", image: "products_optimized/copoTwister.webp" },
       { id: 136, name: "Copo com Borda Colorida", image: "products_optimized/copoBordaColorida.webp" },
-      { id: 209, name: "Copo com Borda Pintada + Degradê 100ml e 200ml", image: "products_optimized/copos_borda_pintada_degrade.webp" },
+      { id: 209, name: "Copo com Borda Pintada + Degradê 200ml a 1000ml", image: "products_optimized/copos_borda_pintada_degrade.webp" },
       { id: 210, name: "Copo Neon Personalizado", image: "products_optimized/copos_neon.webp" }
     ]
   },
